@@ -1,0 +1,454 @@
+body.intra {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 60px;
+    height: 120vh;
+    position: fixed;
+    background-color: #2b2747;
+    padding: 0px;
+    margin: 0px;
+    margin-top: -20px;
+    margin-left: -10px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.userinfo {
+    margin-left: 140px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userinfo-container {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.userinfo-header {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.userinfo-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+.user-handle {
+    font-size: 18px;
+    color: #bbbbbb;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status-text {
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+.userinfo-body {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.userinfo-stats,
+.userinfo-contact {
+    flex: 1;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+.stat-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.progress-label {
+    font-size: 14px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 10px;
+    background-color: #444444;
+    border-radius: 5px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #00bfa5;
+    border-radius: 5px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+}
+
+.list {
+    width: 500px;
+    height: 150px;
+    border-radius: 15px;
+    margin-left: 170px;
+    margin-top: -200px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.list h3 {
+    color: rgb(61, 216, 190);
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.btn {
+    background-color: orangered;
+    color: white;
+    padding: 0px 0px;
+    border: none;
+    width: 90px;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: orangered;
+    transition: 1s;
+}
+
+.cursus1,
+.cursus2,
+.cursus3,
+.cursus4,
+.cursus5,
+.cursus6,
+.cursus7,
+.cursus8,
+.cursus9,
+.cursus10,
+.cursus11,
+.cursus12,
+.cursus13,
+.cursus14
+ {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-left: 150px;
+    font-family: fantasy;
+}
+.cursus15,
+.cursus16 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-left: 135px;
+    color: black;
+    font-family: fantasy;
+}
+
+.cursus1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus3 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus4 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus5 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus6 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus7 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus8 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus9 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus10 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus11 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus12 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus13 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus14 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus15 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cursus16 a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+hr{
+    margin-left: 80px;
+}
+span {
+    margin-left: 100px;
+    color:rgb(47, 165, 47);
+}
+
+.button-container {
+    margin-left: 20px; /* Ajuster l'espacement selon vos besoins */
+}
+
+button {
+    margin-left: -100px;
+    font-family: fantasy;
+    width: 100px;
+    height: auto;
+    font-size: 20px;
+    color: rgb(47, 165, 47);
+    background-color: white;
+    border: 1px solid white; /* Ajouté pour définir la largeur de la bordure */
+    border-radius: 0;
+}
+.registred {
+    color: green;
+}
+
+/*.agenda{
+    width: 80%;
+    max-width: 800px;
+    margin-left: 100px;
+}
+
+.event exam
+{
+    display: flex;
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+}
+.date{
+    background-color: #3c3c3c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+.details{
+    flex: 1px;
+}
+.title{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.description{
+    font-style: italic;
+}
+
+.time,.duration, .location, .full{
+    font-size: 0.9em;
+}
+
+.exam{
+    background-color: #ff6b6b;
+}
+.conference{
+    background-color: #4ecdc4;
+}
+    */
+    .sidebartype {
+        width: 120px;
+        height: 120vh;
+        position: fixed;
+        background-color: #363253;
+        padding: 0px;
+        margin: 0px;
+        margin-top: -120px;
+        margin-left: 50px;
+    }
+    
+    .sidebartype .logo {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    
+    .sidebartype ul {
+        list-style-type: none;
+        padding: 2px;
+        margin-top: 100px;
+        text-align: center;
+        color: white;
+    }
+    
+    .sidebartype ul li {
+        margin: 20px 0px;
+        padding: 2px;
+        text-align: center;
+        margin-left: 15px;
+        color: white;
+    }
+    
+    .sidebartype ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        display: flex;
+        font-size: 10px;
+        font-family: monospace;
+        align-items: center;
+    }
+    
+.progress{
+    display: block;
+    width:200px;
+    height:200px;
+    margin-top: 120px;
+    margin-left: 200px;
+    background-color: rgb(37, 187, 37);
+}
+.progress h1{
+    margin-top: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.progress h2{
+    color: white;
+    text-align: center;
+    margin-left: -100px;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.progress span{
+    color: white;
+    font-size: 60px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

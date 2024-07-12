@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Intra 1337</title>
+    <style>
+        body.intra {
+            background-color: #20232a;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            width: 60px;
+            height: 100vh;
+            position: fixed;
+            margin-top: -0px;
+            background-color: #2b2747;
+            padding: 0px;
+        }
+    
+        .sidebar .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+    
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
+    
+        .sidebar ul li a .icon {
+            margin-right: 10px;
+        }
+
+        .userinfo {
+            margin-left: 20px;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .userinfo-container {
+           /* background-color: #1c1c1c;*/
+           background: url(https://static.vecteezy.com/system/resources/previews/022/341/375/non_2x/abstract-color-polygon-background-design-abstract-geometric-origami-style-with-gradient-free-vector.jpg);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 2100px;
+            margin-left: 55px;
+        }
+
+        .userinfo-header {
+            display: flex;
+            align-items: center;
+            margin-left: 0px;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 0px;
+        }
+
+        .userinfo-details {
+            flex-grow: 1;
+        }
+
+        .user-name {
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0;
+            margin-left: 0px;
+        }
+
+        .user-handle {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin: 0;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .status-text {
+            color: #b0b0b0;
+            margin-left: 0px;
+        }
+
+        .userinfo-body {
+            margin-top: 20px;
+        }
+
+        .userinfo-stats {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-left:-20px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            color: #ffffff;
+            
+        }
+
+        .stat-label {
+            font-size: 24px;
+            color: #b0b0b0;
+        }
+
+        .stat-progress {
+            text-align: center;
+            margin-left: 5px;
+            max-width: 300px;
+        }
+
+        .progress-label {
+            display: block;
+            font-size: 14px;
+            margin-left: 15px;
+            color: #b0b0b0;
+        }
+
+        .progress-bar {
+            height: 20px;
+            width: 600px; /* طول محدد بالبكسل */
+            margin-left: 0px;
+            background-color: #333;
+            border-radius: 5px;
+            margin: 0px 0;
+        }
+
+        .progress-fill {
+            height: 20;
+            margin-right: 100px;
+            background-color: #4caf50;
+            border-radius: 5px;
+        }
+
+        .userinfo-contact {
+            margin-top: -135px;
+            text-align: left;
+            font-size: 25px;
+            margin-left: 300px;
+        }
+
+        .userinfo-contact p {
+            margin: 5px 0;
+        }
+
+        .contact-icon {
+            margin-right: 10px;
+        }
+
+        /* Style pour l'agenda */
+        .agenda {
+            box-shadow:0px 0px 20px #5e5b5b;
+            margin-top: 0px;
+            margin: 0px;
+            width: 350px;
+            height: 230px;
+            margin-left: 100px;
+            
+        }
+
+        .event {
+            display: flex;
+            padding: 10px;
+            margin: 10px 0;
+            width: 330px;
+            height: 90px;
+            border-radius: 5px;
+            background-color: #333;
+        }
+
+        .event .date {
+            background-color: #444;
+            margin: 0px;
+            padding: 25px;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .event .details {
+            flex: 1;
+        }
+
+        .event .details .title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .event .details .description {
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .event .details .time,
+        .event .details .duration,
+        .event .details .location {
+            font-size: 10px;
+            margin-bottom: 0px;
+        }
+
+        .event.exam {
+            background-color: #ff6b6b;
+        }
+
+        .event.conference {
+            background-color: #4ecdc4;
+        }
+
+        .event.association {
+            background-color: #1a535c;
+        }
+
+        .event.full {
+            color: red;
+            font-weight: bold;
+        }
+
+        h1{
+            font-size: 20px;
+            margin-left: 100px;
+        }
+        .evaluation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -35px;
+            margin-top: 5px;
+            width: 270px;
+            padding: 10px;
+            height: 210px;
+            background-color: #333 50%;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        
+        
+        .evaluation img {
+            display: flex;
+            text-align: center;
+            margin-left: 40px;
+            margin-top: -60px;
+        }
+        .evaluation h3{
+            display: flex;
+            font-family:monospace;
+            font-size: 15px;
+            text-align: center;
+            margin-left: -90px;
+            margin-top: 60px;
+        }
+        .cont{
+            display: flex;
+            border:1px solid #333;
+            width: 530px;
+            height: 150px;
+            margin-top: -10px;
+            margin-left: 670px;
+        }
+        .calendar-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+            margin-top: -90px;
+            margin-left: -120px;
+            
+        }
+        
+        #calendar {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 15px;
+            margin-top: 70px;
+            margin-left: 100px;
+            
+          
+        }
+        
+        .month {
+            background-color: #20232a;
+            width: 90px;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .month h1 {
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            margin-left: 10px;
+        }
+        
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            font-size: 10px;
+            margin-top: 10px;
+        }
+        
+        .day {
+            width: 15px;
+            height: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1abc9c;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .day:hover {
+            background-color: #16a085;
+        }
+        .skills {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0%;
+            margin-top: -10px;
+            width: 320px;
+            padding: 10px;
+            height: 210px;
+            background-color: #333 50%;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        
+        
+        select{
+            display: flex;
+            background-color: transparent;
+            color: white;
+            font-family:monospace;
+            font-size: 15px;
+            text-align: center;
+            margin-left: 290px;
+        
+            margin-top: -185px;
+        }
+        option{
+            color: black;
+        }
+        h4{
+            display: flex;
+            margin-top: 100px;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('username');
+            const userElement = document.getElementById('user');
+
+            if (username) {
+                userElement.textContent = username;
+                userElement.style.display = 'block';
+            } else {
+                userElement.textContent = 'No username found';
+            }
+        });
+    </script>
+</head>
+<body class="intra">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="file:///C:/Users/LB-PC/Downloads/R__1_-removebg-preview%20(2).png" alt="1337 Logo" width="60" height="35">
+        </div>
+        <ul style="margin-left: 15px;margin-top: 40px">
+            <li><a href="./userpage.html"><img src="file:///C:/Users/LB-PC/Downloads/pixelcut-export-removebg-preview.png" width="35px" height="35px"></a></li>
+            <li><a href="./cursusprojects.html"><img src="file:///C:/Users/LB-PC/Downloads/Capture_d_%C3%A9cran_5-7-2024_113844_profile.intra.42.fr__1_-removebg-preview.png"  width="35px" height="35px"></a></li>
+            <li  style="margin-top: 400px; margin-left:0px"><a href="./index.html"><img src="file:///C:/Users/LB-PC/Downloads/left-chevron.png" width="20px" height="20px"></a></li>
+        </ul>
+    </div>
+
+    <section class="userinfo">
+        <div class="userinfo-container">
+            <div class="userinfo-header">
+                <img src="file:///C:/Users/LB-PC/Downloads/elevee.png" alt="User Profile Picture" class="profile-pic">
+                <div class="userinfo-details">
+                    <h1 class="user-name" id="username"></h1>
+                    <p class="user-handle" id="user"></p>
+                    <div class="status">
+                        <span class="status-indicator"></span>
+                        <span class="status-text">available</span>
+                    </div>
+                </div>
+            </div>
+            <div class="userinfo-body">
+                <div class="userinfo-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">Ev.P</span>
+                        <span class="stat-label">13</span>
+                    </div>
+                    <div class="stat-progress">
+                        <span class="progress-label">86%</span>
+                        <div class="progress-bar" >
+                            <div class="progress-fill" style="width: 500px;"></div>
+                        </div>
+                        <span class="progress-label">C Piscine</span>
+                    </div>
+                </div>
+                <div class="userinfo-contact">
+                    <p><i class="contact-icon">📧</i> Contact@gmail.com</p>
+                    <p><i class="contact-icon">📍</i> Khouribga</p>
+                    <p><i class="contact-icon" id="date">📅</i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section agenda -->
+     <h1>AGENDA</h1>
+    <div class="agenda">
+        <div class="event exam">
+            <div class="date">12 July</div>
+            <div class="details">
+                <div class="title">Exam C</div>
+                <div class="description">For C Exam Alone In The Dark - Beginner</div>
+                <div class="time">At 10:00</div>
+                <div class="duration">For about 4 hours</div>
+                <div class="location">E1 & E2</div>
+            </div>
+        </div>
+        <div class="event conference">
+            <div class="date">27 Aout</div>
+            <div class="details">
+                <div class="title">Conference</div>
+                <div class="description">RTE sur un projet IA</div>
+                <div class="time">At 3:00 PM</div>
+                <div class="duration">For about 2 hours</div>
+                <div class="location">Amphi / Holodeck</div>
+            </div>
+        </div>
+        <!--<div class="event association">
+            <div class="date" id="date">27 February</div>
+            <div class="details">
+                <div class="title">Association</div>
+                <div class="description">Side Project Club - 42 Entrepreneurs</div>
+                <div class="time">At 6:00 PM</div>
+                <div class="duration">For about 1 hour</div>
+                <div class="location">Valhalla</div>
+            </div>
+        </div>
+        <div class="event conference">
+            <div class="date">27 February</div>
+            <div class="details">
+                <div class="title">Conference</div>
+                <div class="description">The Dark Web is coming - par CybelAngel</div>
+                <div class="time">At 6:00 PM</div>
+                <div class="duration">For about 2 hours</div>
+                <div class="location">Amphi + E0</div>
+                <div class="full">FULL</div>
+            </div>
+        </div>
+    </div>
+-->
+<h3 style="display:block;margin-top:-266px;margin-left: 400px;">EVALUATION</h3c>
+
+<div class="evaluation">
+    <img src="file:///C:/Users/LB-PC/Downloads/R__4_-removebg-preview%20(2).png" width="50px" height="50px">
+    <h3>NO EVALUATION YET</h3>
+</div>
+<h4 style="margin-left: 700px;margin-top:-280px; display:flex">LOGTIME</h4>
+<div class="cont">
+    <div class="calendar-container">
+        <div id="calendar"></div>
+</div>
+</div>
+<h4>SKILLS</h4>
+<div class="skills">
+    <select id="skl">
+        <option id="java">JAVA</option>
+        <option id="cpp">C++</option>
+        <option id="c">C</option>
+        <option id="html">HTML & CSS</option>
+        <option id="js">JAVASCRIPT</option>
+    </select>
+    <h1 id="skills"></h1>
+</div>
+
+    <script>
+        const currentDate = new Date();
+        var day = currentDate.getDate(); // Remplacé getDay() par getDate()
+        var month = currentDate.getMonth() + 1; // Les mois sont indexés de 0 à 11, donc on ajoute 1
+        var year = currentDate.getFullYear();
+        document.getElementById('date').innerHTML = "📅 " + day + '/' + month + '/' + year;
+    </script>
+
+    <script>
+        const calendar = document.getElementById('calendar');
+const months = ['JUN', 'JUL', 'AOU', 'SEP'];
+const daysInMonth = [30, 31, 31, 30]; // February has 29 days to account for leap year
+
+months.forEach((month, index) => {
+    const monthDiv = document.createElement('div');
+    monthDiv.classList.add('month');
+    
+    const monthTitle = document.createElement('h1');
+    monthTitle.textContent = month;
+    monthDiv.appendChild(monthTitle);
+    
+    const daysDiv = document.createElement('div');
+    daysDiv.classList.add('days');
+    
+    for (let day = 1; day <= daysInMonth[index]; day++) {
+        const dayDiv = document.createElement('div');
+        dayDiv.classList.add('day');
+        dayDiv.textContent = day;
+        daysDiv.appendChild(dayDiv);
+    }
+    
+    monthDiv.appendChild(daysDiv);
+    calendar.appendChild(monthDiv);
+});
+    </script>
+</body>
+</html>
