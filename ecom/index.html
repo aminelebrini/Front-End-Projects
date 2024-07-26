@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-COMME STORE - Découvrez une large gamme de produits de qualité à des prix raisonnables.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/mail.css' rel='stylesheet'>
+    <title>E-COMME STORE</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-left: 25px;
+        }
+        li a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+        img {
+            margin-left: 20px;
+        }
+        .entry {
+            width: 100%;
+            margin-top: -20px;
+            height: 100vh;
+            background: url('https://wallpaperaccess.com/full/2593068.jpg') no-repeat center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+        .entry h1 {
+            margin-top: 0;
+            text-shadow: 2px 2px 2px black;
+            font-size: 3em;
+        }
+        .entry button {
+            border-radius: 6px;
+            width: 30vh;
+            margin-top: 30px;
+            background-color: rgb(38, 89, 201);
+            height: 7vh;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .entry button:hover {
+            background-color: rgb(28, 69, 161);
+        }
+        .services {
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f1f1;
+        }
+        .qualite, .qualite1, .qualite3 {
+            text-align: center;
+            max-width: 250px;
+            border-color: black;
+            margin-left: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 5px gray;
+        }
+        .qualite img, .qualite1 img, .qualite3 img {
+            width: 250px;
+            height: 200px;
+            border-radius: 5px;
+            margin-left: 0px;
+        }
+        .qualite p, .qualite1 p, .qualite3 p {
+            margin-top: 20px;
+            font-size: 20px;
+            font-family: cursive;
+        }
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(38, 89, 201);
+        }
+        .products-line {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-left: 150px;
+            border-radius: 10px;
+            width: 1040px;
+            box-shadow: 0px 0px 10px gray;
+            animation: scroll 20s linear infinite;
+        }
+        .product1, .product2, .product3, .product4, .product5 {
+            display: inline-block;
+            margin-right: 20px;
+            text-align: center;
+            box-shadow: gray;
+        }
+        h3 {
+            font-size: 15px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: red;
+        }
+        /*@keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }*/
+        .overlined {
+            text-decoration: overline;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: transparent;
+        }
+        .categories img {
+            margin: 10px;
+            display: flex;
+            border-color: white;
+            border-radius: 7px;
+            border-width: 20px;
+            margin-left: 100px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        footer {
+            background-color: rgb(38, 89, 201);
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer h1 {
+            color: white;
+            margin-left: -75%;
+        }
+        footer .email {
+            margin-top: -20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        footer input {
+            font-size: 20px;
+            width: 270px;
+            border-radius: 5px;
+            border-color: rgb(38, 89, 201);
+            height: 35px;
+            color: black;
+        }
+        footer button {
+            width: 100px;
+            height: 35px;
+            margin-top: -20%;
+            border-radius: 5px;
+            background-color: white;
+            color: rgb(38, 89, 201);
+            cursor: pointer;
+        }
+        footer button:hover {
+            background-color: rgb(28, 69, 161);
+            color: white;
+        }
+        .socialmedia{
+            margin-top: 1%;
+            margin-left: -4%;
+            color: white;
+        }
+        .socialmedia a{
+            margin-left: 2%;
+            align-items: center;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>E-COMME STORE</h1>
+        <nav>
+            <ul>
+                <li class="home"><a href="./index.html">Home</a></li>
+                <li class="shop"><a href="./productspage.html">Shop</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="blog"><a href="#">Blog</a></li>
+                <li class="qa"><a href="#">Q&A</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" width="50px" height="30px" alt="Cart">
+    </header>
+    <hr>
+    <div class="entry">
+        <h1>All products in one place</h1>
+        <button type="button" onclick="location.href='productspage.html'" >Discover what's new</button>
+    </div>
+    <h2 class="overlined">SERVICES</h2>
+    <section class="services" id="services" style="background-color: transparent;">
+        <div class="qualite">
+            <img src="https://png.pngtree.com/png-vector/20220615/ourmid/pngtree-best-quality-product-vector-sign-on-white-background-png-image_5088293.png" alt="Quality">
+            <p>All of our products are characterized by high quality and reasonable prices</p>
+        </div>
+        <div class="qualite1">
+            <img src="https://blog.unpakt.com/wp-content/uploads/2018/02/48959495_l-support-service-design-vector-illustration-eps10-graphic-810x673.jpg" alt="Confirmation">
+            <p>Our service is quick to confirm orders and will track your package until it reaches you</p>
+        </div>
+        <div class="qualite3">
+            <img src="https://th.bing.com/th/id/OIP.1e7BVtUbzTwy7NcqMZwdigHaGj?rs=1&pid=ImgDetMain" alt="Quality" height="180px">
+            <p>Our service is characterized by fast delivery of orders while keeping products from breaking</p>
+        </div>
+    </section>
+
+    <h2>TREND PRODUCTS</h2>
+    <div class="products-line">
+        <div class="product1">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/07/982946/1.jpg?5179" alt="product1" width="100px" height="100px">
+            <h3>Kenz Presse Orange 1,2l...</h3>
+            <p>95.00 Dh</p>
+            <p class="old-price">179.00 Dh</p>
+        </div>
+        <div class="product2">
+            <img src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/82/524256/1.jpg?7524" alt="product1" width="100px" height="100px">
+            <h3>Adidas Chaussure Court...</h3>
+            <p>349.00 Dh</p>
+            <p class="old-price">705.00 Dh</p>
+        </div>
+        <div class="product3">
+            <img src="https://ma.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/76/982946/1.jpg?5131" alt="product1" width="100px" height="100px">
+            <h3>Kenz Mini Four 9 Litres...</h3>
+            <p>259.00 Dh</p>
+            <p class="old-price">399.00 Dh</p>
+        </div>
+        <div class="product4">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/26/883136/3.jpg?4874" alt="product1" width="100px" height="100px">
+            <h3>Mellerware Robot Mixeur...</h3>
+            <p>159.00 Dh</p>
+            <p class="old-price">259.00 Dh</p>
+        </div>
+        <div class="product5">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/86/745936/1.jpg?7140" alt="product1" width="100px" height="100px">
+            <h3>Adidas Chaussure Court...</h3>
+            <p>799.00 Dh</p>
+            <p class="old-price">999.00 Dh</p>
+        </div>
+    </div>
+    <h2>OUR CATEGORIES</h2>
+    <div class="categories">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie_10.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie_8.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie_9.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie_4.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1_copie_11.jpg" width="200px" height="150px">
+        <img src="https://ma.jumia.is/cms/000_2024/000007_Juillet/CAT/Plan_de_travail_1.jpg" width="200px" height="150px">
+    </div>
+    <footer>
+        <h1>E-COMME STORE</h1>
+        <h4 class="email" style="font-size: 20px; margin-left:-20%">Your Email</h4>
+        <div>
+            <input type="text" id="email" name="email" class="email" placeholder="E-mail" required>
+            <button type="button" onclick="">SEND</button>
+        </div>
+        <hr>
+        <div class="socialmedia">
+            <a><i class="fab fa-instagram"></i></a>
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-tiktok"></i></a>
+            <a><i class="fab fa-youtube"></i></a>
+            <h1 style="text-align: center; margin-left:4%; font-size:20px">all rights are save &copy; A.LEBRINI 2024</h1>
+        </div>
+    </footer>
+    <script></script>
+</body>
+</html>

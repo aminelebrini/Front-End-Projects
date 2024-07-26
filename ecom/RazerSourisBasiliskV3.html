@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="name">Razer Souris Basilisk V3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin: 0;
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h1 a{
+            text-decoration: none;
+            color: black;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-left: 25px;
+        }
+        li a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+        img {
+            margin-left: 20px;
+        }
+        hr {
+            margin-top: 0;
+            border: 0.5px solid #ccc;
+        }
+        .page {
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 450px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .page img {
+            display: block;
+            border-radius: 25px;
+            margin-left: 50px;
+        }
+        .product-info {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .product-info h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .product-info h2 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: black;
+        }
+        .product-info h3 {
+            margin: 10px 0;
+            color: #888;
+            font-size: 18px;
+        }
+        .product-info span {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .product-info h4 {
+            margin: 10px 0;
+            font-size: 16px;
+            color:red;
+        }
+        .stars {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        .stars i {
+            color: #f8d64e;
+            margin-right: 5px;
+        }
+        .user-info{
+            align-items: center;
+            margin-left: 500px;
+            margin-top: -450px;
+        }
+        .user-info input{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        .user-info button{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        h5{
+            margin-left: 650px;
+            color: green;
+        }
+        .error {
+            color: red;
+            margin-left: 640px;
+        }
+        .description{
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .desc span{
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href="./index.html">E-COMME STORE</a></h1>
+        <nav>
+            <ul>
+                <li class="home"><a href="./index.html">Home</a></li>
+                <li class="shop"><a href="./productspage.html">Shop</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="blog"><a href="#">Blog</a></li>
+                <li class="qa"><a href="#">Q&A</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" width="50px" height="30px" alt="Cart">
+    </header>
+    <hr>
+    <div class="page">
+        <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/90/343346/1.jpg?9927" width="300px" height="300px" alt="Reef Sandale - Electric Sea">
+        <div class="product-info">
+            <h1>Razer Souris Basilisk V3</h1>
+            <h2>Marque: Razer | Similar products by Razer</h2>
+            <h3>129.00 Dh<span>200.00 Dh</span></h3>
+            <h4>Quantity: 10</h4>
+        </div>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="user-info">
+            <input type="text" placeholder="Full Name" id="namee" required>
+            <input type="text" placeholder="Number Phone" id="phonee" required>
+            <input type="text" placeholder="E-mail" id="emaill" required>
+            <input type="text" placeholder="Adress" id="adresss" required>
+            <button type="button" onclick="confirmOrder()">I confirm the Order</button>
+        </div>
+        <h5 id="confirmation"></h5>
+    </div>
+    <div class="description">
+        <p class="desc"><span>Description: </span><br>Souris Basilisk V3 X HyperSpeed RZ01-04870100-R3G1
+
+ 
+
+
+            Forme ergonomique emblématique avec 9 commandes personnalisables pour une maniabilité et une maîtrise inégalées. Appréciée par des millions de personnes dans le monde, la forme caractéristique de la souris s’adapte parfaitement à différentes prises en main, tandis que ses nombreux boutons faciles d’accès permettent une combinaison infinie de commandes et de macros.
+            
+            
+            
+            Razer HyperSpeed Wireless (2,4 GHz) et Bluetooth pour des performances à très faible latence ou une autonomie prolongée de la batterie. Exploitez des performances à faible latence et fluides, plus rapides que les autres technologies sans fil, ou passez au Bluetooth pour des heures de jeu prolongées. Équipée d’un système de prise en charge de plusieurs appareils pour une installation simplifiée.
+            
+            
+            
+            Jusqu’à 285 heures d’autonomie de la batterie pour des performances durables. Avec jusqu’à 535* heures en mode Bluetooth et 285 heures avec la technologie Razer HyperSpeed Wireless, résistez plus longtemps au cœur de la bataille avec une souris conçue pour jouer de longues heures. *Varie en fonction de l’utilisation et de l’appareil.
+            Capteur optique avancé 5G 18 K Razer pour une précision hors norme. Adaptez la souris à votre style de jeu avec un nouvel ensemble robuste de paramètres de sensibilité. Profitez d’une visée réactive et précise au pixel près grâce à un capteur ultrafiable qui suit vos mouvements, sans aucune dérive.
+            
+            
+            
+            Switchs mécaniques de souris Razer de 2e génération pour une durabilité et une cohérence des clics améliorées. Grâce aux nouveaux points de contact plaqués or, ces switchs sont moins susceptibles de se dégrader et ont une durée de vie plus longue (jusqu’à 60 millions de clics), ce qui vous permet de profiter d’une exécution nette et tout aussi constante.
+            Alimentée par Razer Chroma RGB pour une véritable expérience immersive.
+            
+            
+            Personnalisez l’éclairage en choisissant parmi plus de 16,8 millions de couleurs et d’innombrables effets lumineux et plongez au cœur de vos jeux grâce à la réaction dynamique de la souris avec des centaines de jeux intégrés à Chroma.</p>
+        <div class="principal_description">
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px; border-collapse: separate;">
+                <tr>
+                    <td><strong>TECHNICAL DESCRIPTION: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Marque:</strong> Razer</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; SKU: </strong> RA258EA1HSDDENAFAMZ</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Weight (kg):</strong> 1</td>
+                </tr>
+            </table>
+
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px;margin-top:20px; border-collapse: separate;">
+                <tr>
+                    <td><strong>Main Characteristics: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb;Forme ergonomique iconique avec 9 commandes personnalisables.</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Razer™ HyperSpeed Wireless (2,4 GHz) et Bluetooth</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Jusqu’à 285 heures d’autonomie</td>
+                </tr>
+            </table>
+                     
+        </div>
+    </div>
+    <script>
+        function collectData() {
+            var name = document.getElementById('namee').value.trim();
+            var phone = document.getElementById('phonee').value.trim();
+            var email = document.getElementById('emaill').value.trim();
+            var address = document.getElementById('adresss').value.trim();
+
+            if (name && phone && email && address) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function confirmOrder() {
+            var confirmationElement = document.getElementById('confirmation');
+            if (collectData()) {
+                confirmationElement.innerText = "Your Order Has been Confirmed";
+                confirmationElement.classList.remove('error');
+            } else {
+                confirmationElement.innerText = "There is an error in one of the information";
+                confirmationElement.classList.add('error');
+            }
+        }
+        
+    </script>
+</body>
+</html>

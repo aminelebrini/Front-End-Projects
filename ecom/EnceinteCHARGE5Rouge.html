@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="name">Robot Cuisine Pétrin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin: 0;
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h1 a{
+            text-decoration: none;
+            color: black;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-left: 25px;
+        }
+        li a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+        img {
+            margin-left: 20px;
+        }
+        hr {
+            margin-top: 0;
+            border: 0.5px solid #ccc;
+        }
+        .page {
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 450px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .page img {
+            display: block;
+            border-radius: 25px;
+            margin-left: 50px;
+        }
+        .product-info {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .product-info h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .product-info h2 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: black;
+        }
+        .product-info h3 {
+            margin: 10px 0;
+            color: #888;
+            font-size: 18px;
+        }
+        .product-info span {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .product-info h4 {
+            margin: 10px 0;
+            font-size: 16px;
+            color:red;
+        }
+        .stars {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        .stars i {
+            color: #f8d64e;
+            margin-right: 5px;
+        }
+        .user-info{
+            align-items: center;
+            margin-left: 500px;
+            margin-top: -450px;
+        }
+        .user-info input{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        .user-info button{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        h5{
+            margin-left: 650px;
+            color: green;
+        }
+        .error {
+            color: red;
+            margin-left: 640px;
+        }
+        .description{
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .desc span{
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href="./index.html">E-COMME STORE</a></h1>
+        <nav>
+            <ul>
+                <li class="home"><a href="./index.html">Home</a></li>
+                <li class="shop"><a href="./productspage.html">Shop</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="blog"><a href="#">Blog</a></li>
+                <li class="qa"><a href="#">Q&A</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" width="50px" height="30px" alt="Cart">
+    </header>
+    <hr>
+    <div class="page">
+        <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/96/685595/1.jpg?7473" width="300px" height="300px" alt="Reef Sandale - Electric Sea">
+        <div class="product-info">
+            <h1>Enceinte CHARGE 5 Rouge</h1>
+            <h2>Marque: JBL | Similar products by JBL</h2>
+            <h3>2 149.00 Dh<span>2 500.00 Dh</span></h3>
+            <h4>Quantity: 10</h4>
+        </div>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="user-info">
+            <input type="text" placeholder="Full Name" id="namee" required>
+            <input type="text" placeholder="Number Phone" id="phonee" required>
+            <input type="text" placeholder="E-mail" id="emaill" required>
+            <input type="text" placeholder="Adress" id="adresss" required>
+            <button type="button" onclick="confirmOrder()">I confirm the Order</button>
+        </div>
+        <h5 id="confirmation"></h5>
+    </div>
+    <div class="description">
+        <p class="desc"><span>Description: </span><br>Emmenez la fête avec vous, quelle que soit la météo. L’enceinte JBL Charge 5 offre un Son Pro Original JBL puissant, avec son haut-parleur d’écoute longue portée optimisé, son haut-parleur haute fréquence séparé et ses deux radiateurs de basses JBL. Jusqu’à 20 heures d’autonomie et un chargeur portable pratique pour que vos appareils soient toujours chargés et que vous puissiez faire la fête jusqu’au bout de la nuit. Pluie ? Boissons renversées ? Sable ? Conçue selon la norme IP67, la Charge 5 résiste à l’eau et à la poussière et survit à tout ce qui se présente sur son chemin. Grâce à PartyBoost, vous pouvez connecter plusieurs enceintes compatibles JBL PartyBoost, pour un son assez puissant pour toutes les foules. Avec de toutes nouvelles couleurs inspirées des dernières tendances urbaines, elle est aussi belle que le son qu’elle produit Son Pro Original JBL puissantEmportez avec vous la puissance incroyable du Son Pro JBL. La JBL Charge 5 est dotée d’un haut-parleur optimisé de longue portée, d’un haut-parleur haute fréquence séparé et de deux radiateurs de basses JBL, le tout pour un son incroyablement riche et clair. Obtenez ce son typique d’une grande salle, même à l’extérieur. 20 heures d’autonomieAmusez-vous et oubliez l’heure qui tourne. Grâce à son incroyable autonomie de 20 heures, la Charge 5 JBL vous permet de faire la fête toute la journée et jusqu’au bout de la nuit. Résiste à la poussière et à l’eau conformément à la norme IP67À la piscine. Au parc. L’enceinte JBL Charge 5 résiste à la poussière et à l’eau, conformément à la norme IP67, vous pouvez donc l’emporter partout.</p>
+        <div class="principal_description">
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px; border-collapse: separate;">
+                <tr>
+                    <td><strong>TECHNICAL DESCRIPTION: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Marque:</strong> JBL</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; SKU: </strong> JB452EA1LKB2ZNAFAMZ</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Taille (Longueur x Largeur x Hauteur cm):</strong> 22 x 9.6 x 9.3</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Weight (kg):</strong> 0.96</td>
+                </tr>
+            </table>
+
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px;margin-top:20px; border-collapse: separate;">
+                <tr>
+                    <td><strong>Main Characteristics: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Profils Bluetooth: A2DP 1.3, AVRCP 1.6</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Modulation de l'emetteur Bluetooth: GFSK, π/4 DQPSK, 8DPSK</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Puissance de l'émetteur Bluetooth: ≤ 20 dBm (EIRP)</td>
+                </tr>
+            </table>
+                     
+        </div>
+    </div>
+    <script>
+        function collectData() {
+            var name = document.getElementById('namee').value.trim();
+            var phone = document.getElementById('phonee').value.trim();
+            var email = document.getElementById('emaill').value.trim();
+            var address = document.getElementById('adresss').value.trim();
+
+            if (name && phone && email && address) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function confirmOrder() {
+            var confirmationElement = document.getElementById('confirmation');
+            if (collectData()) {
+                confirmationElement.innerText = "Your Order Has been Confirmed";
+                confirmationElement.classList.remove('error');
+            } else {
+                confirmationElement.innerText = "There is an error in one of the information";
+                confirmationElement.classList.add('error');
+            }
+        }
+        
+    </script>
+</body>
+</html>

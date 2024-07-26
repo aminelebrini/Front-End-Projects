@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="name">Reef Sandale - Electric Sea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 100px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            margin: 0;
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        h1 a{
+            text-decoration: none;
+            color: black;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-left: 25px;
+        }
+        li a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+        img {
+            margin-left: 20px;
+        }
+        hr {
+            margin-top: 0;
+            border: 0.5px solid #ccc;
+        }
+        .page {
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 450px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .page img {
+            display: block;
+            border-radius: 25px;
+            margin-left: 50px;
+        }
+        .product-info {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .product-info h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .product-info h2 {
+            margin: 10px 0;
+            font-size: 16px;
+            color: black;
+        }
+        .product-info h3 {
+            margin: 10px 0;
+            color: #888;
+            font-size: 18px;
+        }
+        .product-info span {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .product-info h4 {
+            margin: 10px 0;
+            font-size: 16px;
+            color:red;
+        }
+        .stars {
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+        .stars i {
+            color: #f8d64e;
+            margin-right: 5px;
+        }
+        .user-info{
+            align-items: center;
+            margin-left: 500px;
+            margin-top: -450px;
+        }
+        .user-info input{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        .user-info button{
+            border-color: black;
+            height: 50px;
+            margin-top: 20px;
+            width: 500px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        h5{
+            margin-left: 650px;
+            color: green;
+        }
+        .error {
+            color: red;
+            margin-left: 640px;
+        }
+        .description{
+            border: 1px solid black;
+            border-radius: 25px;
+            width: 80%;
+            height: 450px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .desc span{
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1><a href="./index.html">E-COMME STORE</a></h1>
+        <nav>
+            <ul>
+                <li class="home"><a href="./index.html">Home</a></li>
+                <li class="shop"><a href="./productspage.html">Shop</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="blog"><a href="#">Blog</a></li>
+                <li class="qa"><a href="#">Q&A</a></li>
+                <li class="contact"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="https://static.vecteezy.com/system/resources/previews/019/787/018/original/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.png" width="50px" height="30px" alt="Cart">
+    </header>
+    <hr>
+    <div class="page">
+        <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/17/284056/1.jpg?4765" width="300px" height="300px" alt="Reef Sandale - Electric Sea">
+        <div class="product-info">
+            <h1>Reef Sandale - Electric Sea</h1>
+            <h2>Marque: Reef | Similar products by Reef</h2>
+            <h3>129.00 Dh<span>299.00 Dh</span></h3>
+            <h4>Quantity: 8</h4>
+        </div>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="user-info">
+
+            <form method="post" action="/submit_form">
+                <input type="text" name="fname" placeholder="Full Name" id="namee" required>
+                <input type="text" name="phone" placeholder="Phone Number" id="phonee" required>
+                <input type="email" name="email" placeholder="E-mail" id="emaill" required>
+                <input type="text" name="address" placeholder="Address" id="adresss" required>
+                <button type="button" onclick="confirmOrder()">I confirm the Order</button>
+              </form>
+              
+        </div>
+        <h5 id="confirmation"></h5>
+    </div>
+    <div class="description">
+        <p class="desc"><span>Description: </span><br>For those taking a more scenic route, note the pretty prints on the classic Seaside. This sandal is made of plush, water-resistant rubber. The soft PVC-free straps feature an anti-chafing liner and our patented toe design prevents the straps from breaking. Beach prints, comfortable sandals, happy.</p>
+        <div class="principal_description">
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px; border-collapse: separate;">
+                <tr>
+                    <td><strong>TECHNICAL DESCRIPTION: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Marque:</strong> Reef</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; SKU: </strong>RE705FS0AAGGONAFAMZ</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Weight (kg):</strong> 1</td>
+                </tr>
+            </table>
+
+            <table style="border: 2px solid black; border-radius: 20px; padding: 10px;margin-top:20px; border-collapse: separate;">
+                <tr>
+                    <td><strong>Main Characteristics: </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Marque:</strong> Reef</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Couleur:</strong> Electric Sea</td>
+                </tr>
+                <tr>
+                    <td><strong>&sdotb; Modèle:</strong> CI5399</td>
+                </tr>
+            </table>
+                     
+        </div>
+    </div>
+    <script>
+        function collectData() {
+            var name = document.getElementById('namee').value.trim();
+            var phone = document.getElementById('phonee').value.trim();
+            var email = document.getElementById('emaill').value.trim();
+            var address = document.getElementById('adresss').value.trim();
+
+            if (name && phone && email && address) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function confirmOrder() {
+            var confirmationElement = document.getElementById('confirmation');
+            if (collectData()) {
+                confirmationElement.innerText = "Your Order Has been Confirmed";
+                confirmationElement.classList.remove('error');
+            } else {
+                confirmationElement.innerText = "There is an error in one of the information";
+                confirmationElement.classList.add('error');
+            }
+        }
+        
+    </script>
+</body>
+</html>
