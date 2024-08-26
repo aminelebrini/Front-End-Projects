@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Order-CONFIRMATION</title>
+</head>
+<body>
+    <style>
+        body {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            margin-left: 4%;
+        }
+
+        nav {
+            flex: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 0.9%;
+            margin-left: -15%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: orangered;
+            border-radius: 5px;
+        }
+
+        nav ul img {
+            width: 40px;
+            height: 35px;
+            margin-top: 0;
+            margin-left: 850%;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .info h2 {
+            margin: 0 20px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            color: white;
+            align-items: center;
+        }
+
+        .info h2 i {
+            margin-right: 8px;
+            color: white;
+        }
+
+        .info h2 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info h2 a:hover {
+            color: orangered;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+        }
+        .forms{
+            background-color: white;
+            width: 55%;
+            padding: 1%;
+            height: auto;
+            margin-left: 21%;
+            border-radius: 10px;
+            
+        }.forms h6{
+            text-align: center;
+            color: #DE5A69;
+            font-size: 25px;
+        }
+        .forms input{
+            width: 22%;
+            margin-top: 3%;
+            margin-left: 5%;
+            border-radius: 10px;
+            border-color: #D55B77;
+            height: 40px;
+        }
+        .forms h3 {
+    border: 2px solid #D55B77; /* تحديد لون الحدود */
+    border-radius: 10px; /* جعل الحواف دائرية */
+    margin-top: -6%; /* إضافة مساحة من الأعلى */
+    background-color: rgb(202, 198, 198); /* تحديد لون الخلفية */
+    width: 23%; /* تحديد العرض */
+    padding-top: 1.3%; /* تحديد الحشو (padding) */
+    height: 47px;
+    display: flex;
+    margin-left: 34%;
+    justify-content: space-between;
+    color: rgb(95, 93, 93);
+    font-size: 15px;
+    padding-left: 0.5%; /* تحديد الارتفاع */
+    box-sizing: border-box; /* التأكد من أن الحشو والحدود يتم تضمينها في العرض والارتفاع */
+}
+.forms h4 {
+    border: 2px solid #D55B77; /* تحديد لون الحدود */
+    border-radius: 10px; /* جعل الحواف دائرية */
+    margin-top: -8%; /* إضافة مساحة من الأعلى */
+    background-color: rgb(202, 198, 198); /* تحديد لون الخلفية */
+    width: 23%; /* تحديد العرض */
+    padding-top: 1.3%; /* تحديد الحشو (padding) */
+    height: 47px;
+    display: flex;
+    margin-left: 62.5%;
+    justify-content: space-between;
+    color: rgb(95, 93, 93);
+    font-size: 15px;
+    padding-left: 0.5%; /* تحديد الارتفاع */
+    box-sizing: border-box; /* التأكد من أن الحشو والحدود يتم تضمينها في العرض والارتفاع */
+}
+.forms h5 {
+    border: 2px solid #D55B77; /* تحديد لون الحدود */
+    border-radius: 10px; /* جعل الحواف دائرية */
+    margin-top: -0.5%; /* إضافة مساحة من الأعلى */
+    background-color: rgb(202, 198, 198); /* تحديد لون الخلفية */
+    width: 23%; /* تحديد العرض */
+    padding-top: 1.3%; /* تحديد الحشو (padding) */
+    height: 47px;
+    display: flex;
+    margin-left: 5%;
+    justify-content: space-between;
+    color: rgb(95, 93, 93);
+    font-size: 15px;
+    padding-left: 0.5%; /* تحديد الارتفاع */
+    box-sizing: border-box; /* التأكد من أن الحشو والحدود يتم تضمينها في العرض والارتفاع */
+}
+.forms button {
+          
+            border-radius: 15px;
+            border-color: #DE5A69;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 40%;
+            margin-left: 35%;
+            margin-top: 3%;
+            color: #D55B77; /* Hide the text color */
+            background-color: white;
+            font-weight: bold;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+        .forms button:hover {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            -webkit-background-clip: none; /* Remove text gradient on hover */
+            background-clip: none; /* Remove text gradient on hover */
+            color: white; /* Set text color on hover */
+            transition: 1s;
+        }
+        .forms p{
+            text-align: center;
+            color: green;
+        }
+        footer {
+    display: flex; /* يجعل المحتوى داخل الفوتر يعمل باستخدام Flexbox */
+    justify-content: center; /* يحدد أن العناصر داخل الفوتر تكون في المنتصف أفقيًا */
+    align-items: center; /* يحدد أن العناصر داخل الفوتر تكون في المنتصف عموديًا */
+    padding: 10px; /* يضيف حشوة بمقدار 10 بكسل حول الفوتر */
+    margin-top: 2%;
+background-color: white;}
+
+
+        footer h6 {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin: 0;
+        }
+        footer h6 a{
+            text-decoration: none;
+            color: #666;
+        }
+
+    </style>
+    <header>
+        <h1>TECHNO</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./page2.html">PRODUCTS</a></li>
+                <li><a href="#contacts">CONTACTS</a></li>
+                <li><a href="./index.html#services">SERVICES</a></li>
+                <li><img src="https://www.pngplay.com/wp-content/uploads/3/Panier-PNG-De-Fichier-Telecharger.png" alt="panier"></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div class="info">
+        <h2><i class="fas fa-phone"></i> +2120505050505</h2>
+        <h2><i class="fas fa-envelope"></i> <a href="mailto:aminelebrini4@example.com">aminelebrini4@gmail.com</a></h2>
+    </div>
+    <hr>
+    <div class="forms">
+        <h6>Order confirmation service</h6>
+        
+        <input type="text" placeholder="FULL NAME *" id="fname" required>
+        <input type="phone" placeholder="NUMBER PHONE *" id="phone" required>
+        <input type="email" placeholder="E-mail *" id="mail" required>
+        <input type="adress" placeholder="ADRESS *" id="adress" required>
+        <h3 class="city" id="storedCity"></h3>
+        <h4 class="productname" id="productname"></h4>
+        <h5 class="price" id="price"></h5>
+        <p class="price" id="confirm"></p>
+        <button type="button" onclick="confirm()">CONFIRM</button>
+    </div>
+    <script>
+        function confirm(){
+            const Fname = document.getElementById('fname').value;
+            const Phone = document.getElementById('phone').value;
+            const Mail = document.getElementById('mail').value;
+            const Adress = document.getElementById('adress').value;
+            if((Fname === "" && Phone === "" && Mail === "" && Adress === "") || (Fname === "" || Phone === "" || Mail === "" || Adress === "")){
+                alert("Please enter or complete your information.");
+                document.getElementById('confirm').style.color = "red";  // Sets the color to red
+                document.getElementById('confirm').innerText = "Please enter or complete your information.";  // Sets the text
+
+            }
+            else{
+                document.getElementById('confirm').innerText = "Your order has been confirmed. Please wait for another confirmation call.";
+            }
+
+        }
+        const price = localStorage.getItem('price');
+        const name = localStorage.getItem('name');
+        document.getElementById('productname').innerHTML = name;
+        document.getElementById('price').innerHTML = price;
+         function displayStoredCity() {
+            const storedCity = localStorage.getItem('city');
+            if (storedCity && storedCity !== "Cities") {
+                document.getElementById('storedCity').textContent = storedCity;
+            }
+            
+        }
+        document.addEventListener('DOMContentLoaded', displayStoredCity);
+    </script>
+    <footer>
+        <h6>&copy; 2024 TECHNO. All Rights Reserved. By <a href="https://aminelebrini.github.io/portfolio-web">AMINE LEBRINI</a></h6>
+    </footer>
+</body>
+</html>

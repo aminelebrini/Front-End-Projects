@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>TECHNO</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            margin-left: 4%;
+        }
+
+        nav {
+            flex: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 0.9%;
+            margin-left: -15%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: orangered;
+            border-radius: 5px;
+        }
+
+        nav ul img {
+            width: 40px;
+            height: 35px;
+            margin-top: 0;
+            margin-left: 850%;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .info h2 {
+            margin: 0 20px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            color: white;
+            align-items: center;
+        }
+
+        .info h2 i {
+            margin-right: 8px;
+            color: white;
+        }
+
+        .info h2 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info h2 a:hover {
+            color: orangered;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .intro img {
+            width: 400px;
+            height: 400px;
+            margin-left: 55%;
+            margin-top: -22%;
+            animation: slide-right-to-left 2s ease-in-out;
+        }
+
+        @keyframes slide-right-to-left {
+            from {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .intro h3 {
+            color: white;
+            margin-top: 18%;
+            font-size: 25px;
+            margin-left: -40%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        @keyframes From-top-to-bottom {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .intro button {
+            border: none; /* No border */
+            border-radius: 5px;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-right: 40%;
+            color: #D55B77; /* Hide the text color */
+            background-color: white;
+            font-weight: bold;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        @keyframes From-top-to-bottom {
+            from {
+                transform: translateY(40%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .intro button:hover {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            -webkit-background-clip: none; /* Remove text gradient on hover */
+            background-clip: none; /* Remove text gradient on hover */
+            color: white; /* Set text color on hover */
+            transition: 1s;
+        }
+
+        .services {
+            display: flex;
+            margin-left: 12%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .ser1 {
+            width: 300px;
+            height: auto;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px white;
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            padding: 10px;
+        }
+
+        .ser1 p {
+            margin-left: 3%;
+            color: white;
+        }
+
+        .ser1 h5 {
+            text-align: center;
+            font-size: 30px;
+            margin-top: 10%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+        }
+        .categories{
+            display: flex;
+            margin-left: 17%;
+            
+        }
+        .categorie1, .categorie2, .categorie3,.categorie4{
+            margin-left: 30px;
+        }
+        .categorie1 img{
+            width: 200px;
+            height: 200px;
+            margin-top: 1%;
+            animation: slide-right-to-left 2s ease-in-out;
+        }
+
+        @keyframes slide-right-to-left {
+            from {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .categorie1 img:hover,.categorie1 img:active{
+            width: 250px;
+            transition: 1s;
+            height: 250px;
+
+        }
+        .categorie1 h6{
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 1%;
+        }
+        .categorie2 img{
+            width: 100px;
+            height: 200px;
+            margin-top: 1%;
+            animation: slide-right-to-left 2s ease-in-out;
+        }
+
+        @keyframes slide-right-to-left {
+            from {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .categorie2 img:hover,.categorie2 img:active{
+            width: 140px;
+            transition: 1s;
+            height: 220px;
+
+        }
+        .categorie2 h6{
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        .categorie3 img{
+            width: 200px;
+            height: 200px;
+            margin-top: 1%;
+            animation: slide-right-to-left 2s ease-in-out;
+        }
+
+        @keyframes slide-right-to-left {
+            from {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .categorie3 img:hover,.categorie3 img:active{
+            width: 250px;
+            transition: 1s;
+            height: 250px;
+
+        }
+        .categorie3 h6{
+            font-size: 20px;
+            color: white;
+            margin-left: 0%;
+            text-align: center;
+            margin-top: 1%;
+        }
+
+        .categorie4 img{
+            width: 240px;
+            height: 200px;
+            margin-top: 1%;
+            animation: slide-right-to-left 2s ease-in-out;
+        }
+
+        @keyframes slide-right-to-left {
+            from {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .categorie4 img:hover,.categorie4 img:active{
+            width: 300px;
+            transition: 1s;
+            height: 280px;
+
+        }
+        .categorie4 h6{
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 1%;
+        }
+    .fastsell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.pro1 {
+    background-color: white;
+    border: 1px solid #ddd;
+    transition: left;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    display:flow-root;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        @keyframes From-top-to-bottom {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+.pro1 img {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+}
+.pro1 img:hover, img:active{
+    width: 200px;
+    height: 290px;
+    transition: 1s;
+}
+.pro1 h7 {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.pro1 p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.pro1 span s {
+    color: #999;
+    font-size: 12px;
+}
+.bg{
+    background-color: #f5f5f5;
+}
+.news {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .news input {
+            width: 300px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 20px;
+            border: none;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        .news input:hover {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            color: white;
+            transition: 1s;
+        }
+
+        .news button {
+            border: none;
+            border-radius: 5px;
+            width: 120px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #D55B77;
+            background-color: white;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        .news button:hover {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            color: white;
+            transition: 1s;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+        }
+
+        footer h6 {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin: 0;
+        }
+        footer h6 a{
+            text-decoration: none;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TECHNO</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./page2.html">PRODUCTS</a></li>
+                <li><a href="#contacts">CONTACTS</a></li>
+                <li><a href="./index.html#services">SERVICES</a></li>
+                <li><img src="https://www.pngplay.com/wp-content/uploads/3/Panier-PNG-De-Fichier-Telecharger.png" alt="panier"></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div class="info">
+        <h2><i class="fas fa-phone"></i> +2120505050505</h2>
+        <h2><i class="fas fa-envelope"></i> <a href="mailto:aminelebrini4@example.com">aminelebrini4@gmail.com</a></h2>
+    </div>
+    <hr>
+    <div class="intro">
+        <h3>!Empowering Innovation, One Click at a Time¡</h3>
+        <button type="button" id="btn" onclick="discover()">DISCOVER NOW</button>
+        <img src="https://th.bing.com/th/id/R.511899d3a98fb1626fe55ead4c6a8ca2?rik=M9I9EjK5XRqCBw&pid=ImgRaw&r=0" alt="Tech Image">
+    </div>
+    <hr>
+    <h4>Services</h4>
+    <div class="services" id="services">
+        <div class="ser1">
+            <h5>QUALITY<br>&#9733;&#9733;&#9733;&#9733;&#9734;</h5>
+            <p>At TECHNO, we pride ourselves on offering only the highest quality tech products. Each item in our collection is carefully selected and rigorously tested to ensure superior performance, durability, and reliability. Our commitment to excellence means you can trust that every purchase meets the highest standards, providing you with cutting-edge technology that enhances your life. Experience innovation and precision with our top-tier products, designed to deliver exceptional value and satisfaction.</p>
+        </div>
+        <div class="ser1">
+            <h5>DELIVERY<br><i class="fas fa-truck"></i></h5>
+            <p>At TECHNO, we understand that timely and reliable delivery is essential to your shopping experience. That's why we ensure that every order is processed and shipped with the utmost care and efficiency. Our dedicated logistics team works tirelessly to guarantee prompt delivery, and we provide real-time tracking so you can monitor your order every step of the way. Experience peace of mind with our commitment to swift, secure, and dependable delivery, bringing your tech products to your door exactly when you need them.</p>
+        </div>
+        <div class="ser1">
+            <h5>SUPPORT<br><i class="fas fa-headset"></i></h5>
+            <p>At TECHNO, we are committed to providing exceptional customer support. Our dedicated team is available to assist you with any questions or concerns you may have before, during, and after your purchase. We offer comprehensive support to ensure that your experience with our products is seamless and satisfying. From technical assistance to product information, we are here to help you every step of the way, ensuring you get the most out of your TECHNO experience.</p>
+        </div>
+    </div>
+    <hr style="margin-top: 3%;">
+    <h4>Categories</h4>
+    <div class="categories">
+        <div class="categorie1">
+            <img src="https://www.nicepng.com/png/full/113-1132779_imac-mockup-png.png" alt="pc">
+            <h6>COMPUTERS</h6>
+        </div>
+        <div class="categorie2">
+            <img src="https://th.bing.com/th/id/R.94a6b16773d4d0127e5bc13203e6bba6?rik=dxfrhpY8AGTXUQ&pid=ImgRaw&r=0" alt="phone">
+            <h6>PHONES</h6>
+        </div>
+        <div class="categorie3"> <img src="https://th.bing.com/th/id/R.d4d1d271e8b8739e38ef65ac01dfea9a?rik=QlGjTCSD0pDMRQ&pid=ImgRaw&r=0" alt="pad">
+            <h6>IPADS</h6></div>
+        <div class="categorie4">
+            <img src="https://www.pngall.com/wp-content/uploads/9/Gadget-PNG-Pic.png" alt="pc">
+            <h6>ACCESSORIES</h6>
+        </div>
+    </div>
+    <div class="bg">
+        <h8 style="color: #D55B77; margin-top: 4%;margin-left: 43.6%;text-align: center;font-weight: bold; font-size: 30px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Fast Selling</h8>
+    <div class="fastsell">
+        <div class="pro1">
+            <img src="https://th.bing.com/th/id/R.8398e78d6981941280ced623b8360721?rik=%2bfeMpeqlCwrGQQ&pid=ImgRaw&r=0" alt="pro1">
+            <h7><br>iPHONE 14 PRO MAX</h7>
+            <p>16 975 Dh <span><s>26 999 Dh</s></span></p>
+        </div>
+        <div class="pro1">
+            <img src="https://www.nicepng.com/png/full/113-1132779_imac-mockup-png.png" alt="pro1">
+            <h7><br>iMAC 2024 24 inch</h7>
+            <p>26 975 Dh <span><s>29 999 Dh</s></span></p>
+        </div>
+        <div class="pro1">
+            <img src="https://www.freepnglogos.com/uploads/airpods-png/airpods-pro-airpods-what-the-difference-and-10.png" alt="pro1">
+            <h7><br>AIR PODS PRO</h7>
+            <p>500 Dh <span><s>800 Dh</s></span></p>
+        </div>
+        <div class="pro1">
+            <img src="https://th.bing.com/th/id/OIP.h1QE-3Qoj-9avkEEVllD7QHaJS?rs=1&pid=ImgDetMain" alt="pro1">
+            <h7><br>PS5 - SONY</h7>
+            <p>4000 Dh <span><s>4890 Dh</s></span></p>
+        </div>
+        <div class="pro1">
+            <img src="https://th.bing.com/th/id/R.aeecfe1dee317b6ecdfc0de45159cea5?rik=DxcoBRcYl73Bdw&pid=ImgRaw&r=0" alt="pro1">
+            <h7><br>REDMI PAD</h7>
+            <p>1000 <span><s>1500 Dh</s></span></p>
+        </div>
+    </div>
+    </div>
+    <div class="newws">
+        <h4>Newsletter</h4>
+        <div class="news">
+            <input type="email" placeholder="Enter your email for updates" >
+            <button type="button">Subscribe</button>
+        </div>
+    </div>
+</body>
+<footer>
+    <h6>&copy; 2024 TECHNO. All Rights Reserved. By <a href="https://aminelebrini.github.io/portfolio-web">AMINE LEBRINI</a></h6>
+</footer>
+<script src="./index.js"></script>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title id="productName"></title>
+</head>
+<body>
+    <style>
+         body {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            margin-left: 4%;
+        }
+
+        nav {
+            flex: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 0.9%;
+            margin-left: -15%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: orangered;
+            border-radius: 5px;
+        }
+
+        nav ul img {
+            width: 40px;
+            height: 35px;
+            margin-top: 0;
+            margin-left: 850%;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .info h2 {
+            margin: 0 20px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            color: white;
+            align-items: center;
+        }
+
+        .info h2 i {
+            margin-right: 8px;
+            color: white;
+        }
+
+        .info h2 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info h2 a:hover {
+            color: orangered;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+        }
+        .product-details {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    padding: 20px;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 6%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-details:hover {
+    transform: scale(1.05);
+}
+
+.product-details img {
+    max-width: 160px;
+    margin-top: 10%;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 5%;
+}
+
+.product-details img:hover {
+    transform: rotate(-5deg);
+}
+
+.details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 20%;
+    width: 372px;
+}
+
+.price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    margin-left: 35%;
+}
+
+#productPrice {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e60000;
+    animation: blink 1s infinite;
+    
+}
+
+.productOldPrice {
+    font-size: 20px;
+    color: #999;
+    text-decoration: none;
+    position: relative;
+    
+}
+
+.productOldPrice::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e60000;
+    transform: rotate(10deg);
+}
+
+.availability {
+    color: green;
+    font-size: 20px;
+    margin-top: -15px;
+    letter-spacing: 1px;
+    margin-left: 35%;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.star-rating {
+    margin-top: 5%;
+    margin-left: 33%;
+}
+
+.star {
+    font-size: 24px;
+    color: #FFD700; /* لون النجوم الذهبي */
+    transition: transform 0.2s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+/*.delivry{
+    background-color: white;
+    width: 32%;
+    margin-left: 65%;
+    margin-top: -26%;
+    
+    border-radius: 10px;
+}
+Style for the select dropdown 
+select#city {
+    margin-left: 10%;
+    width: 30%;
+    max-width: 30%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+ Custom arrow for the dropdown 
+select#city::-ms-expand {
+    display: none;
+}
+
+select#city::after {
+    content: '\25BC'; Downward arrow 
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+ On focus/hover 
+select#city:hover,
+select#city:focus {
+    border-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+ Customize the options 
+select#city option {
+    padding: 10px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+select#city option:hover {
+    background-color: #f0f0f0;
+}
+
+ Responsive adjustments 
+@media (max-width: 600px) {
+    select#city {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+h4{
+    margin-left: 10%;
+    
+}*/
+button {
+             /* No border */
+            border-radius: 10px;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 50%;
+            margin-top: 7%;
+            border-color: #D55B77;
+            color: #D55B77; /* Hide the text color */
+            background-color: white;
+            font-weight: bold;
+            animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        @keyframes From-top-to-bottom {
+            from {
+                transform: translateY(40%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            -webkit-background-clip: none; /* Remove text gradient on hover */
+            background-clip: none; /* Remove text gradient on hover */
+            color: white; /* Set text color on hover */
+            transition: 1s;
+        }
+        .delivry {
+    background-color: white;
+    width: 30%;
+    margin-left: 62%;
+    margin-top: -23.7%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.delivry h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.delivry select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivry select:hover,
+.delivry select:focus {
+    border-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.seller-performance {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.seller-performance h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seller-performance .info-icon {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+}
+
+.seller-performance ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.seller-performance li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+    justify-content: center;
+}
+
+.seller-performance .icon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.seller-performance .icon.green {
+    color: #4CAF50;
+}
+
+.seller-performance .icon.blue {
+    color: #1E88E5;
+}
+.details{
+    width: 90%;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 5%;
+}
+.details h4{
+    padding: 5%;
+    font-size: 25px;
+}
+.details p{
+    margin-left: 2%;
+    margin-top: -7%;
+    padding: 3%;
+    width: auto;
+}
+.details iframe{
+    margin-left: 25%;
+    border-radius: 10px;
+}
+footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-top: 2%;
+
+            background-color: white;
+        }
+
+        footer h6 {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin: 0;
+        }
+        footer h6 a{
+            text-decoration: none;
+            color: #666;
+        }
+
+    </style>
+    <header>
+        <h1>TECHNO</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./page2.html">PRODUCTS</a></li>
+                <li><a href="#contacts">CONTACTS</a></li>
+                <li><a href="./index.html#services">SERVICES</a></li>
+                <li><img src="https://www.pngplay.com/wp-content/uploads/3/Panier-PNG-De-Fichier-Telecharger.png" alt="panier"></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div class="info">
+        <h2><i class="fas fa-phone"></i> +2120505050505</h2>
+        <h2><i class="fas fa-envelope"></i> <a href="mailto:aminelebrini4@example.com">aminelebrini4@gmail.com</a></h2>
+    </div>
+    <hr>
+
+    <div class="product-details">
+        <img id="productImage" alt="Product Image">
+        <div>
+            <h3 id="productname"></h3>
+            <div class="price-container">
+                <p id="productPrice"></p>
+                <p><s id="productOldPrice" class="productOldPrice"></s></p>
+            </div>
+            <h3 class="availability">Disponible</h3>
+            <div class="star-rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+            </div>
+            <button type="button" onclick="buy()">BUY</button>
+        </div>
+    </div>
+    <div class="delivry">
+        <h4>Select city for delivery</h4>
+        <select name="city" id="city" onchange="storeCity()">
+            <option value="Cities">Cities:</option>
+            <option value="casablanca">Casablanca</option>
+            <option value="rabat">Rabat</option>
+            <option value="marrakech">Marrakech</option>
+            <option value="fes">Fes</option>
+            <option value="tangier">Tangier</option>
+            <option value="agadir">Agadir</option>
+            <option value="meknes">Meknes</option>
+            <option value="oujda">Oujda</option>
+            <option value="kenitra">Kenitra</option>
+            <option value="tetouan">Tetouan</option>
+            <option value="safi">Safi</option>
+            <option value="mohammedia">Mohammedia</option>
+            <option value="el-jadida">El Jadida</option>
+            <option value="nador">Nador</option>
+            <option value="settat">Settat</option>
+            <option value="temara">Temara</option>
+            <option value="beni-mellal">Beni Mellal</option>
+            <option value="khouribga">Khouribga</option>
+            <option value="essaouira">Essaouira</option>
+            <option value="taza">Taza</option>
+            <option value="larache">Larache</option>
+            <option value="khemisset">Khemisset</option>
+            <option value="guelmim">Guelmim</option>
+        </select>
+        <div class="seller-performance">
+            <h4>Seller performance<span class="info-icon">i</span></h4>
+            <ul>
+                <li><span class="icon green">&#9733;</span> Order Shipping Rate: Good</li>
+                <li><span class="icon green">&#9733;</span> Quality Score: Good</li>
+                <li><span class="icon blue">&#9745;</span> Consumer Reviews: Average</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="details">
+        <h4>Details:</h4>
+        <p id="det"></p>
+        <iframe width="560" height="315" id="frame" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <script>
+        const citye = document.getElementById('city').value;
+        // استرجاع البيانات من `localStorage`
+        const image = localStorage.getItem('image');
+        const name = localStorage.getItem('name');
+        const price = localStorage.getItem('price');
+        const oldPrice = localStorage.getItem('oldPrice');
+        
+        function storeCity() {
+            const city = document.getElementById('city').value;
+            localStorage.setItem('city', city);
+            
+                
+        }
+
+        if (image && name && price) {
+            document.getElementById('productImage').src = image;
+            document.getElementById('productName').textContent = name;
+            document.getElementById('productname').textContent = name;
+            document.getElementById('productPrice').textContent = price;
+            document.getElementById('productOldPrice').textContent = oldPrice;
+            if(name === "iPHONE 14 PRO MAX"){
+                document.getElementById('det').innerText = "A new, magical way to interact with your iPhone. A critical safety feature designed to save lives. An innovative 48MP camera for breathtaking detail. And all the power of the ultimate smartphone chip.Meet Dynamic Island, an Apple innovation that combines hardware and software in a whole new way.\n It shows you the music you’re listening to, your current FaceTime call, and so much more—all without ever interrupting what you’re doing.";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/FT3ODSg1GFE?si=qt__BUXFZ5SxWOB8";
+            }else if(name === "iMAC 2024 24 inch"){
+                document.getElementById('det').innerText = "The iMac 'Core i5' 3.0 21.5-Inch Aluminum (Retina 4K, Mid-2017/Kaby Lake) features a 14-nm 'Kaby Lake' 3.0 GHz Intel 'Core i5' processor (7400) with four independent processor 'cores' on a single chip, a 6 MB shared level 3 cache, 8 GB of 2400 MHz DDR4 SDRAM that is reportedly onboard -- but actually can be upgraded later -- a 1 TB (5400 RPM) hard drive, and a Radeon Pro 555 graphics processor with 2 GB of dedicated VRAM. It also has a built-in 'FaceTime HD' webcam and stereo speakers.";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/cXnihGlYcPQ?si=GgFo1Dk1ylownzK6";
+            }
+            else if(name === "AIR PODS PRO 6S"){
+                document.getElementById('det').innerText = "The AirPods Pro 6S earphones deliver a high-quality wireless audio experience. Thanks to Bluetooth technology, they ensure a fast and stable connection with your compatible devices. \n Their sleek and compact design makes them easy to carry and use. They fit comfortably in your ears, allowing for extended listening without discomfort. \n The AirPods Pro 6S are equipped with intuitive touch controls, allowing you to easily control audio playback, adjust the volume, and answer phone calls. \n In addition, their built-in microphone ensures exceptional voice clarity during hands-free calls. With an extended battery life, these earphones allow you to enjoy your favorite podcast for long periods of time without having to charge them frequently. In addition, the included portable charging case offers convenient charging on the go.";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/ql6mhhHCldY?si=sSjZnS0WhZCaaLE1";
+            }else if(name === "PS5 - SONY"){
+                document.getElementById('det').innerText = "Design Slim: With the PS5® digital edition, players enjoy powerful gaming technology in a sleek and compact console. n\ Ultra-Fast SSD optimizes your gaming sessions with near-instant load times for installed PS5™ games. n\ Ray Tracing immerses you in worlds offering unparalleled realism, with each ray of light individually simulated to create ultra-realistic shadows and reflections in compatible PS5™ games. n\ 4K Gaming on Your TV allows you to enjoy your favorite PS5™ games on your stunning 4K TV. n\ Tempest 3D AudioTech immerses you in sound environments where audio seems to come from all directions. With compatible headphones, your surroundings come to life thanks to Tempest 3D AudioTech in supported games. n\ Haptic Feedback lets you experience the tactile sensations of the DualSense wireless controller in select PS5 games, allowing you to feel the impact of your in-game actions through dynamic sensory feedback. n\ Adaptive Triggers provide a heightened level of engagement by offering dynamic resistance levels that simulate the physical impact of activities in certain PS5 games. n\ Up to 120 FPS with 120 Hz Output ensures smooth gameplay with a high frame rate of up to 120 FPS for compatible games, with support for 120 Hz output on 4K displays.";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/RkC0l4iekYo?si=FnT2vHPPHEvFRKvV";
+            }else if(name === "REDMI PAD"){
+                document.getElementById('det').innerText = "Take your Redmi Pad SE anywhere with its sleek metal unibody design that makes it portable, compact and lightweight. In addition, the Redmi Pad SE features a large 11-inch FHD+ display with 16.7 million colors and a smooth 90Hz refresh rate with AdaptiveSync, ensuring a clear and smooth visual experience for your daily entertainment. \n With low blue light certifications and flicker-free technology, TÜV Rhailand certification, you won't have to worry about the damage that prolonged use could cause to your eyes or your children's eyes. \n With the Redmi Pad SE, you can take high-resolution photos with the sharp 8MP main camera, enhance your video calling experience with the central 5MP front camera.";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/6KHVkxJJ7O4?si=6KDIRHeRgUrQL99I";
+            }
+            else if(name=== "Canon PIXMA G3410 Printer"){
+                document.getElementById('det').innerText = "This multifunction printer is equipped to meet a variety of printing, copying and scanning needs. Here is a detailed description of its key features: \n Print, Copy and Scan: This printer is a multifunction device that offers printing, copying and scanning features, making it versatile for everyday office tasks. \n Print Speed: With a print speed of 8.8 images per minute in black and 5 images per minute in colour, in line with ISO standards, this printer ensures fast productivity to efficiently handle print jobs. \n Print Quality: The print quality reaches a maximum resolution of 4800 × 1200 dots per inch (DPI) in both black and colour, ensuring sharp and detailed results for every printed document. \n \n Features: \n Canon PIXMA G3410 Economical Printer \n Print, copy and scan Manual duplex printing \n Works with 4 Cartridges (black, cyan, magenta, yellow) \n 1 Year Warranty";
+                document.getElementById('frame').src = "https://www.youtube.com/embed/VyFN_tHS-_A?si=JJnZcv5eMPbgrdB7";
+            }else if(name=== "XIAOMI Monitor A22i – Black"){
+                document.getElementById('det').innerText = "Full High Definition Picture Quality Presents a Wonderful New Vision \n A 21.45-inch exclusive VA display panel with 1920 x 1080 FHD resolution ensures a clear and natural viewing experience. \n 8-bit Color Depth, 99% sRGB Smooth Color Transitions and Brilliant Colors \n A stunning 16.7 million brilliant colors deliver vivid, dynamic visuals. Enjoy smooth, natural color transitions, even when viewing complex interfaces or images. \n ";
+            }else if(name==="Foldable Laptop Stand for Mac and PC"){
+                document.getElementById('det').innerText = "Material: AluminumAdjust the angle as you like, laptop stand raises the computer, allows the screen to be in front of the eyes to avoid bending neck pain, also ideal for wrists to avoid carpal tunnel problem. \n Holds the computer well: Two wedges (non-slip) unfold to allow the computer to hold on the support without slipping. \n and with the adjustable support the working position is perfect. offers good stability once the pc is installed It makes typing easier and prevents fatigue. it is a very practical little object.";
+            }else if(name ==="SODO Wireless Bluetooth V5.0 Headset Black"){
+                document.getElementById('det').innerText = "Features: Use Bluetooth or AUX Connection.\n 8 to 12 Hours Working Time.\n TF Card Access Port.\n Built-in Microphone.\n Walk and Talk.\n Latest Bluetooth v5.0 + BR + EDR. Promised compatibility and reliability.\n Dual Mode: Wired and Wireless.\n Bluetooth mode, FM Radio, TF card and Audio in.\n 4000mAh Battery allows 6 hours music playing time (headphone mode).\n Leather Cushion Head-pad & Adjustable Headband.";
+            }else if(name==="DELL Pc OptiPlex i5 4th Gen 8GB Ram 500GB HDD + Mouse and Keyboard"){
+                document.getElementById('det').innerText = "Its compact size, low noise level and sober appearance make it a discreet computer.\n In this version it is equipped with an Intel Core i5-4570 processor clocked at 3.20 GHz and with 4 cores that will be suitable for average office and multimedia tasks.\n It is delivered here with 8GB of DDR3 memory and a 500GB hard drive to store your data.\n Its Microsoft Windows 10 Professional 64-bit operating system allows you to benefit from all the latest features, performance optimization and accumulated security.";
+            }
+        } else {
+            alert("No product information found. Redirecting to home page.");
+            window.location.href = "./index.html";
+        }
+
+        function buy() {
+    // الحصول على المدينة المختارة
+    const city = document.getElementById('city').value;
+
+    // التحقق مما إذا كانت المدينة مختارة
+    if (city === "Cities" || city === "") {
+        alert("Please select a city to confirm the order.");
+    } else {
+        // إذا تم اختيار المدينة بشكل صحيح، يتم تخزينها
+        storeCity();
+        // أكمل عملية الطلب هنا (مثل إرسال الطلب إلى الخادم)
+        alert("Order confirmed for city: " + city);
+        window.location.href = "./orderconfirm.html";
+    }
+}
+
+    </script>
+    <footer>
+        <h6>&copy; 2024 TECHNO. All Rights Reserved. By <a href="https://aminelebrini.github.io/portfolio-web">AMINE LEBRINI</a></h6>
+    </footer>
+</body>
+</html>

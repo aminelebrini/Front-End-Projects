@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>TECHNO</title>
+</head>
+<body>
+    <style>
+         body {
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            margin-left: 4%;
+        }
+
+        nav {
+            flex: 1;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 0.9%;
+            margin-left: -15%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: orangered;
+            border-radius: 5px;
+        }
+
+        nav ul img {
+            width: 40px;
+            height: 35px;
+            margin-top: 0;
+            margin-left: 850%;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .info h2 {
+            margin: 0 20px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            color: white;
+            align-items: center;
+        }
+
+        .info h2 i {
+            margin-right: 8px;
+            color: white;
+        }
+
+        .info h2 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info h2 a:hover {
+            color: orangered;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+        }
+        .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.pro1 {
+    background-color: white;
+    border: 1px solid #ddd;
+    transition: left;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    display:flow-root;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: From-top-to-bottom 2s ease-in-out;
+        }
+
+        @keyframes From-top-to-bottom {
+            from {
+                transform: translateY(20%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+.pro1 img {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+}
+.pro1 img:hover, img:active{
+    width: 200px;
+    height: 290px;
+    transition: 1s;
+}
+.pro1 h7 {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.pro1 p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.pro1 span s {
+    color: #999;
+    font-size: 12px;
+}
+.pro1 h7 button {
+    background-color:transparent;
+    border-color:transparent;
+    font-size: 16px;
+}
+.bg{
+    background-color: #f5f5f5;
+}
+footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B); /* يحدد خلفية الفوتر بتدرج لوني بزاوية 135 درجة */
+        }
+
+        footer h6 {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        footer h6 a{
+            text-decoration: none;
+            color: white;
+        }
+        .search-bar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-bar input[type="text"]{
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            width: 300px;
+        }
+        .search-bar i{
+            color: #D55B77;
+        }
+        .search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: white;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .search-bar button:hover, i:hover{
+            color: white;
+            transition: 0.5s;
+            background: linear-gradient(135deg, #E6C7C2, #F5A9A9, #F58F6E, #DE5A69, #D55B77, #9F508B); /* يحدد خلفية الفوتر بتدرج لوني بزاوية 135 درجة */
+        }
+    </style>
+    <header>
+        <h1>TECHNO</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+                <li><a href="./page2.html">PRODUCTS</a></li>
+                <li><a href="#contacts">CONTACTS</a></li>
+                <li><a href="./index.html#services">SERVICES</a></li>
+                <li><img src="https://www.pngplay.com/wp-content/uploads/3/Panier-PNG-De-Fichier-Telecharger.png" alt="panier"></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div class="info">
+        <h2><i class="fas fa-phone"></i> +2120505050505</h2>
+        <h2><i class="fas fa-envelope"></i> <a href="mailto:aminelebrini4@example.com">aminelebrini4@gmail.com</a></h2>
+    </div>
+    <hr>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for products...">
+        <button type="button" onclick="searchProducts()"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="products">
+        <div class="pro1" onclick="storeProductName('Product A')" data-name="Product A">
+            <img src="https://th.bing.com/th/id/R.8398e78d6981941280ced623b8360721?rik=%2bfeMpeqlCwrGQQ&pid=ImgRaw&r=0" alt="iPhone 14 Pro Max" class="product-img">
+            <h7><button type="button" onclick="iphone(this)" class="product-name">iPHONE 14 PRO MAX</button></h7>
+            <p><span class="product-price">16 975 Dh</span> <span class="product-oldprice"><s>26 999 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product B')" data-name="Product B">
+            <img src="https://www.nicepng.com/png/full/113-1132779_imac-mockup-png.png" alt="iMac 2024" class="product-img">
+            <h7><button type="button" onclick="iphone(this)" class="product-name">iMAC 2024 24 inch</button></h7>
+            <p><span class="product-price">26 975 Dh </span><span class="product-oldprice"><s>29 999 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product C')" data-name="Product C">
+            <img src="https://www.freepnglogos.com/uploads/airpods-png/airpods-pro-airpods-what-the-difference-and-10.png" alt="AirPods Pro" class="product-img">
+            <h7><button type="button" onclick="iphone(this)" class="product-name">AIRPODS PRO</button></h7>
+            <p><span class="product-price">2 975 Dh </span><span class="product-oldprice"><s>3 200 Dh</s></span></p>
+        </div>
+
+    
+        <div class="pro1" onclick="storeProductName('Product D')" data-name="Product D">
+            <img src="https://th.bing.com/th/id/OIP.h1QE-3Qoj-9avkEEVllD7QHaJS?rs=1&pid=ImgDetMain" alt="PS5" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">PS5 - SONY</button></h7>
+            <p><span class="product-price">4000 Dh </span><span class="product-oldprice"><s>4890 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product E')" data-name="Product E">
+            <img src="https://th.bing.com/th/id/R.aeecfe1dee317b6ecdfc0de45159cea5?rik=DxcoBRcYl73Bdw&pid=ImgRaw&r=0" alt="Redmi Pad" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">REDMI PAD</button></h7>
+            <p><span class="product-price">1000 Dh</span><span class="product-oldprice"><s>1500 Dh</s></span></p>
+        </div>
+    </div>
+    
+    <div class="products">
+        <div class="pro1" onclick="storeProductName('Product F')" data-name="Product F">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/99/925156/2.jpg?3333" alt="Canon Printer" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">Canon PIXMA G3410 Printer</button></h7>
+            <p><span class="product-price">1,650.00 Dh</span><span class="product-oldprice"><s>2,100.00 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product G')" data-name="Product G">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/04/034646/1.jpg?3477" alt="Xiaomi Monitor" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">XIAOMI Monitor A22i – Black</button></h7>
+            <p><span class="product-price">890 Dh</span><span class="product-oldprice"><s>990 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product H')" data-name="Product H">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/872246/1.jpg?0783" alt="Laptop Stand" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">Foldable Laptop Stand for Mac and PC</button></h7>
+            <p><span class="product-price">67 Dh </span><span class="product-oldprice"><s>195 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product I')" data-name="Product I">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/84/384943/1.jpg?5918" alt="SODO Headset" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">SODO Wireless Bluetooth V5.0 Headset Black</button></h7>
+            <p><span class="product-price">129 Dh </span><span class="product-oldprice"><s>300 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product J')" data-name="Product J">
+            <img src="https://ma.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/76/643646/1.jpg?9183" alt="Dell PC" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">DELL Pc OptiPlex i5 4th Gen 8GB Ram 500GB HDD + Mouse and Keyboard</button></h7>
+            <p><span class="product-price">800 Dh</span><span class="product-oldprice"><s> 1000 Dh</s></span></p>
+        </div>
+    </div>
+    
+    <div class="products">
+        <div class="pro1" onclick="storeProductName('Product K')" data-name="Product K">
+            <img src="https://th.bing.com/th/id/R.8398e78d6981941280ced623b8360721?rik=%2bfeMpeqlCwrGQQ&pid=ImgRaw&r=0" alt="iPhone 14 Pro Max" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">iPHONE 14 PRO MAX</button></h7>
+            <p><span class="product-price">16 975 Dh</span><span class="product-oldprice"><s>26 999 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product L')" data-name="Product L">
+            <img src="https://www.nicepng.com/png/full/113-1132779_imac-mockup-png.png" alt="iMac 2024" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">iMAC 2024 24 inch</button></h7>
+            <p><span class="product-price">26 975 Dh </span><span class="product-oldprice"><s>29 999 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product M')" data-name="Product M">
+            <img src="https://www.freepnglogos.com/uploads/airpods-png/airpods-pro-airpods-what-the-difference-and-10.png" alt="AirPods Pro" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">AIR PODS PRO</button></h7>
+            <p><span class="product-price">500 Dh </span><span class="product-oldprice"><s>800 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product N')" data-name="Product N">
+            <img src="https://th.bing.com/th/id/OIP.h1QE-3Qoj-9avkEEVllD7QHaJS?rs=1&pid=ImgDetMain" alt="PS5" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">PS5 - SONY</button></h7>
+            <p><span class="product-price">4000 Dh </span><span class="product-oldprice"><s>4890 Dh</s></span></p>
+        </div>
+    
+        <div class="pro1" onclick="storeProductName('Product O')" data-name="Product O">
+            <img src="https://th.bing.com/th/id/R.aeecfe1dee317b6ecdfc0de45159cea5?rik=DxcoBRcYl73Bdw&pid=ImgRaw&r=0" alt="Redmi Pad" class="product-img">
+            <h7><br><button type="button" onclick="iphone(this)" class="product-name">REDMI PAD</button></h7>
+            <p><span class="product-price">1000 Dh</span><span class="product-oldprice"><s>1500 Dh</s></span></p>
+        </div>
+    </div>
+    
+    <script src="./index.js"></script>
+    <footer>
+        <h6>&copy; 2024 TECHNO. All Rights Reserved. By <a href="https://aminelebrini.github.io/portfolio-web">AMINE LEBRINI</a></h6>
+    </footer>
+</body>
+</html>
