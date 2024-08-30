@@ -11,8 +11,8 @@ function getWeather() {
             return response.json();
         })
         .then(data => {
-            console.log(data.cod); // Vérifie le code de réponse
-            console.log(data); // Vérifie les données complètes
+            console.log(data.cod); 
+            console.log(data); 
             if (data.cod === 200) {
                 document.getElementById('weather-result').innerHTML = `
                     <h2>${data.name}, ${data.sys.country}</h2>
@@ -27,6 +27,6 @@ function getWeather() {
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
-            alert('Erreur lors de la récupération des données météorologiques. Veuillez vérifier la console pour plus de détails.');
+            alert('Error retrieving weather data. Please check the console for details.');
         });
 }
