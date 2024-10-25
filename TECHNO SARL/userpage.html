@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>TECHNO Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: blueviolet;
+            color: white;
+            height: 97.5vh;
+            width: 160px;
+            position: fixed;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-top: -1%;
+            transition: 1s ease-left-to-right;
+        }
+
+        nav h1 {
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: -60%;
+            padding: 0 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: white;
+            padding-left: 10px;
+            height: 33px;
+            width: 150px;
+            color: blueviolet;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 1s;
+        }
+
+        .log_out {
+            text-align: center;
+            color: blueviolet;
+            text-decoration: none;
+            padding: 10px 0;
+            background-color: white;
+            font-weight: bold;
+            margin-top: 0%;
+            width: 100px;
+            margin-left: 22px;
+            align-items: center;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .log_out:hover {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        main {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 1%;
+            margin-left: -10%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin: 0;
+            color: blueviolet;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .tasks-container {
+            display: flex; /* استخدام flex لعرض المهام بشكل عمودي */
+            flex-direction: column; /* عرض المهام عمودياً */
+            gap: 20px; /* إضافة مساحة بين المهام */
+        }
+
+        .todays_tasks {
+            text-align: center;
+            padding: 20px;
+            height: 100px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .todays_tasks h4 {
+            margin-top: -12px;
+            text-align: left;
+            margin-left: -12px;
+            color: blueviolet;
+        }
+
+        .todays_tasks p {
+            margin: 5px 0;
+            display: flex;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        .todays_tasks span {
+            font-weight: bold;
+            margin-top: 10px;
+            color: blueviolet;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar div {
+            background-color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .calendar .today {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-header button {
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .calendar-header button:hover {
+            background-color: blueviolet;
+        }
+
+        .login-info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                width: 150px;
+            }
+
+            main {
+                margin-left: 150px;
+            }
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            padding: 10px 20px;
+            width: calc(100% - 200px);
+            position: absolute;
+            right: 0;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            width: 40%;
+            margin-left: 10%;
+        }
+
+        .search input {
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid blueviolet;
+            border-radius: 4px;
+            width: 100%;
+            outline: none;
+        }
+
+        .search button {
+            padding: 8px;
+            margin-left: 5px;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            width: auto; /* Auto width to fit content */
+            margin-left: -10%;
+        }
+
+        .user h2 {
+            font-size: 15px;
+            color: blueviolet;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            margin-right: 10px; /* Add space between username and image */
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            margin-left: -60px;
+        }
+
+        .dropdown-content a {
+            color: blueviolet;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-content a img {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .menudown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            margin-left: -10%;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .menudown-content a {
+            color: blueviolet;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menudown:hover .menudown-content {
+            display: block;
+        }
+
+        .menudown {
+            margin-left: 15px;
+        }
+
+        .menudown button {
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+        }
+        .headprofile {
+            background-image: url(https://static.vecteezy.com/system/resources/previews/023/614/582/non_2x/abstract-triangles-navy-blue-background-illustration-free-vector.jpg);
+            background-size: cover;
+            height: 250px;
+            width: calc(104.9% - 200px);
+            display: flex;
+            margin-left: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        .headprofile h3 {
+            font-size: 35px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        /*.point
+        {
+            color: green;
+            font-weight: bold;
+            font-size: 90px;
+            border-color: green;
+            border-radius: 100px;
+            width: 50px;
+            height: 50px;
+            
+        }*/
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>TECHNO</h1>
+        <div class="nav-links">
+            <a href="#card"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="./employee.html"><i class="fas fa-user-tie"></i> Employee</a>
+            <a href="#"><i class="fas fa-user-slash"></i> Absence</a>
+            <a href="#"><i class="fas fa-calendar"></i> Calendar</a>
+            <a href="#"><i class="fas fa-tasks"></i> To-Do</a>
+            <a href="./emailBox.html"><i class="fas fa-envelope"></i> Email</a>
+            
+        </div>
+        <a href="./index.html" class="log_out">Log Out</a>
+    </nav>
+    <header>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user">
+            <h2 id="username"></h2>
+            <img src="https://cdn3.iconfinder.com/data/icons/start-up-color/780/CEO.png" alt="User Picture" width="30" height="30" style="border-color: black; border-radius: 100%;">
+            <div class="dropdown">
+                <button><img src="https://cdn-icons-png.flaticon.com/512/14666/14666538.png" width="30" height="30" alt="Language Selector"></button>
+                <div class="dropdown-content">
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK Flag"> ENG</a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="France Flag"> FR</a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/555/555593.png" alt="Arabic Flag"> ARB</a>
+                </div>
+            </div>
+            <div class="menudown">
+                <button><img src="https://cdn-icons-png.flaticon.com/512/2099/2099103.png" width="30" height="30" alt="Profile Menu"></button>
+                <div class="menudown-content">
+                    <a href="#">PROFILE</a>
+                    <a href="#">SETTING</a>
+                    <a href="#">CHANGE INFORMATION</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="headprofile">
+        <h3>Welcome Back!, <span id="name"></span></h3>
+    </div>
+
+
+    <main>
+        <div class="card" id="card">
+            <div class="tasks-container">
+                <div class="todays_tasks">
+                    <h4>Today</h4>
+                    <p id="due_tasks"><span>DUE TASKS</span></p>
+                    <p>Completed: <span id="completed_task">12</span></p>
+                </div>
+                <div class="todays_tasks">
+                    <h4>Overdue</h4>
+                    <p id="overdue_tasks"><span>TASKS</span></p>
+                    <p>Yesterday: <span id="yesterday_task">5</span></p>
+                </div>
+                <div class="todays_tasks">
+                    <h4>Issues</h4>
+                    <p id="issues_task"><span>Open</span></p>
+                    <p>Closed Today: <span id="closed_task">22</span></p>
+                </div>
+                <div class="todays_tasks">
+                    <h4>Features</h4>
+                    <p id="features_task"><span>Proposals</span></p>
+                    <p>Approved: <span id="approved_task">24</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Calendar</h2>
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">Previous</button>
+                <div class="month-year" id="monthYear"></div>
+                <button onclick="changeMonth(1)">Next</button>
+            </div>
+            <div class="calendar" id="calendar">
+                <!-- Calendar days will be generated dynamically -->
+            </div>
+        </div>
+
+        <!-- قسم لعرض وقت تسجيل الدخول -->
+        <div class="login-info" id="loginTime"></div>
+        <div class="login-info" id="timeSpent"></div>
+    </main>
+    <div class="employee" id="employee"></div>
+    <script>
+        const username = localStorage.getItem('username');
+        const name = localStorage.getItem('fullName');
+        document.getElementById('username').innerText = username;
+        document.getElementById('name').innerText = name;
+
+        //
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let loginTime = null;
+
+        // وظيفة لتغيير حالة المهمة عند النقر
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+        }
+
+        // وظيفة لحساب عدد الأيام في الشهر
+        function daysInMonth(month, year) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        // تلوين تاريخ اليوم الحالي في التقويم
+        function highlightToday(day, month, year) {
+            const today = new Date();
+            if (today.getDate() === day && today.getMonth() === month && today.getFullYear() === year) {
+                return 'today';
+            }
+            return '';
+        }
+
+        // إنشاء تقويم بناءً على الشهر والسنة
+        function generateCalendar(month, year) {
+            const calendar = document.getElementById('calendar');
+            const monthYearDisplay = document.getElementById('monthYear');
+            calendar.innerHTML = ''; // تفريغ التقويم السابق
+
+            // إعداد الشهر والسنة في الهيدر
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            monthYearDisplay.innerText = `${monthNames[month]} ${year}`;
+
+            // حساب الأيام في الشهر
+            const days = daysInMonth(month, year);
+
+            // إنشاء الأيام في التقويم
+            for (let day = 1; day <= days; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.innerText = day;
+                dayDiv.className = highlightToday(day, month, year);
+                calendar.appendChild(dayDiv);
+            }
+        }
+
+        // تغيير الشهر عند النقر
+        function changeMonth(delta) {
+            currentMonth += delta;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+
+        // تسجيل وقت الدخول
+        function recordLoginTime() {
+            loginTime = new Date();
+            document.getElementById('loginTime').innerText = `Login Time: ${loginTime.toLocaleTimeString()}`;
+        }
+
+        // حساب الوقت المستغرق في الجلسة
+        function calculateTimeSpent() {
+            if (loginTime) {
+                const now = new Date();
+                const timeSpent = Math.floor((now - loginTime) / 1000); // الوقت بالثواني
+                document.getElementById('timeSpent').innerText = `Time Spent: ${timeSpent} seconds`;
+            }
+        }
+
+        generateCalendar(currentMonth, currentYear);
+        recordLoginTime();
+
+        setInterval(calculateTimeSpent, 1000); // تحديث الوقت المستغرق كل ثانية
+    </script>
+</body>
+
+</html>

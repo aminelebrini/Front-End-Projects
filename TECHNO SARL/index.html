@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNO SARL</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        background-image: url('https://static.vecteezy.com/system/resources/previews/023/614/582/non_2x/abstract-triangles-navy-blue-background-illustration-free-vector.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .entry {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .entry h1 {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    input {
+        width: 250px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: 20px;
+        border: 1px solid blueviolet;
+        color: blueviolet;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    input::placeholder {
+        color: blueviolet;
+        font-size: 12px;
+    }
+
+    form button {
+        width: 150px;
+        height: 40px;
+        margin-top: 20px;
+        border-radius: 10px;
+        color: white;
+        background-color: blueviolet;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    form button:hover {
+        background-color: darkviolet;
+    }
+
+    .entry1 {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .entry1 a {
+        margin-top: 3%;
+        color: white;
+        text-decoration: none;
+    }
+
+    .entry1 button {
+        margin-top: 20px;
+        border-radius: 10px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .employee-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .employee-form input {
+        margin-bottom: 10px;
+    }
+
+    .employee-form button {
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        border-radius: 10px;
+        color: white;
+        background-color: blueviolet;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .employee-form button:hover {
+        background-color: darkviolet;
+    }
+</style>
+<body>
+    <div class="entry" id="entry-section">
+        <form>
+            <h1>TECHNO SARL</h1>
+            <input type="text" placeholder="USER-NAME" id="username" required>
+            <input type="password" placeholder="PASSWORD" id="password" required>
+            <button type="button" onclick="entry()">LOG-IN</button>
+        </form>
+        <div class="entry1">
+            <button onclick="employeelog_in()">LOG-IN AS EMPLOYEE</button>
+            <button onclick="forgot_pass()">Forgot Password?</button>
+        </div>
+    </div>
+
+    <footer>
+        <h4 style="text-align: center; color: white; padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            ALL RIGHTS RESERVED &copy; 2024 
+            <a style="color: white; text-decoration: none;" href="https://aminelebrini.github.io/portfolio-web/">
+                AMINE DEV | TECHNO SARL
+            </a>
+        </h4>
+    </footer>
+
+    <script>
+        // Function to handle the login for regular users
+        function entry() {
+            
+            const leader = {
+                name: "AMINE LEBRINI",
+                username : "alebrini",
+                email:"aminelebrini@exemple.com",
+                password:"12345"
+            } 
+            
+
+        const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === leader.username && password === leader.password) {
+                alert('Welcome AMINE LB');
+                localStorage.setItem('username', username);
+                localStorage.setItem('fullName', leader.name);
+                localStorage.setItem('email', leader.email);
+                window.location.href = "./userpage.html";
+            }else {
+                alert('Wrong username or password, please try again');
+            }
+        }
+
+        // Function to handle the login for employees
+        function employeelog_in() {
+            const entrySection = document.getElementById('entry-section');
+            entrySection.innerHTML = `
+                <div class="employee-form">
+                    <h1>TECHNO<br>Employee Login</h1>
+                    <input type="text" placeholder="Full Name" id="employee-fullname" required>
+                    <input type="email" placeholder="Email" id="employee-email" required>
+                    <input type="text" placeholder="Username" id="employee-username" required>
+                    <input type="password" placeholder="Password" id="employee-password" required>
+                    <button onclick="submitEmployee()">Submit</button>
+                    <button onclick="ref(event)">Cancel</button>
+                </div>
+            `;
+        }
+
+        let employees = [
+            { name: "USER", usernamee: "ouhous", email: "user@example.com",password :"4242"},
+            { name: "USER USER", usernamee: "user", email: "user@example.com",password :"424242"},
+            { name: "USER USER USER", usernamee: "anuseri", email: "anlebrini@example.com",password :"42424242"}
+        ];
+        // Function to submit employee data
+        function submitEmployee() {
+            const fullname = document.getElementById('employee-fullname').value;
+            const email = document.getElementById('employee-email').value;
+            const username = document.getElementById('employee-username').value;
+            const password = document.getElementById('employee-password').value;
+
+            if (fullname && email && username && password) {
+                alert(`Employee ${fullname} logged in successfully!`);
+                localStorage('fullname', fullname);
+                localStorage('email', email);
+                localStorage('username', username);
+                window.location.href = "./userpage.html";
+                // Add further employee login logic here
+            } else {
+                alert('Please fill in all fields');
+            }
+        }
+
+        // Function to handle cancel button and revert back to the main form
+        function ref(event) {
+            if (event) {
+                event.preventDefault(); // Prevent default behavior
+            }
+
+            setTimeout(function() {
+                cancelEmployeeForm();
+            }, 1000);
+        }
+
+        // Function to revert to the main login form
+        function cancelEmployeeForm() {
+            const entrySection = document.getElementById('entry-section');
+            entrySection.innerHTML = `
+                <form>
+                    <h1>TECHNO SARL</h1>
+                    <input type="text" placeholder="USER-NAME" id="username" required>
+                    <input type="password" placeholder="PASSWORD" id="password" required>
+                    <button type="button" onclick="entry()">LOG-IN</button>
+                </form>
+                <div class="entry1">
+                    <button onclick="employeelog_in()">LOG-IN AS EMPLOYEE</button>
+                    <a href="#">Forgot Password?</a>
+                </div>
+            `;
+        }
+        
+        function forgot_pass(){
+            alert("PLEASE CONTACT THE SUPERIOR ADMINISTRATOR TO SOLVE YOUR PROBLEM");
+        }
+    </script>
+</body>
+</html>
