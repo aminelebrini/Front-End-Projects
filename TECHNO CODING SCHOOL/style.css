@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    margin-top: 1%; /* Reset default margin for body */
+    font-family: 'IBM Plex Sans', 'Source Code Pro', 'Courier New', Courier, monospace; /* Set a default font for the body */
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2%;
+}
+
+header h1 {
+    color: white;
+    margin: 0; /* Remove default margin from h1 */
+}
+
+.navheader {
+    margin-left: auto; /* Automatically push nav items to the right */
+    display: flex; /* Use flex to align items horizontally */
+}
+
+.navheader a {
+    margin-left: 3%;
+    color: white;
+    width: 120px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.register {
+    width: 120px;
+    background-color: #0C48C9;
+    color: white; /* Add text color for contrast */
+    padding: 10px; /* Add padding for better appearance */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Optional: rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.register:hover {
+    background-color: #0A38A1; /* Darken background on hover */
+}
+
+.intro {
+    background-image: url('file:///C:/Users/LB-PC/Desktop/page1.png'); /* Use relative URL */
+    background-size: cover; /* Cover the entire area */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    height: 400px; /* Set a height for the intro section */
+    width: 100%;
+    display: flex; /* Allows positioning of content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color for contrast */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Optional: add padding */
+}
