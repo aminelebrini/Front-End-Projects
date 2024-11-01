@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHNO CODING SCHOOL</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1c1c1c;
+            color: #333;
+        }
+
+        .welcome-section {
+            background: url('https://www.fundaciontelefonica.com/wp-content/uploads/2022/04/42-chicas-351x351-1-288x288.jpg') center/cover no-repeat;
+            color: white;
+            padding: 60px;
+            height: 642px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .welcome-section h1 {
+            font-size: 2.5em;
+            color: #0C48C9;
+            text-shadow: 2px 2px 5px black;
+            margin-bottom: 0.5em;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .welcome-section h2 {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            margin-bottom: 0.5em;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .welcome-section p {
+            margin-bottom: 1em;
+            font-size: 1.1em;
+            max-width: 500px;
+            line-height: 1.5;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .welcome-section a {
+            background-color: #0C48C9;
+            color: white;
+            border: none;
+            text-align: center;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .sign-in-section {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #1c1c1c;
+            position: relative;
+        }
+
+        .sign-in-section h2 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: white;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .sign-in-btn {
+            background-color: #0C48C9;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            margin-top: 5%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .sign-in-section .additional-links {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .additional-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin: 5px;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-top: -50%;
+            margin-left: -14%;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0C48C9;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            top: 40px;
+            margin-top: -45%;
+            margin-left: -20%;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ffffff30;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-section">
+        <h1>WELCOME</h1>
+        <h2>TO TECHNO CODING SCHOOL's APPLICATION WEBSITE</h2>
+        <p>You probably have all the best reasons in the world to apply to TECHNO CODING SCHOOL, don't waste any more time.</p>
+        <a href="./signup.html">APPLY NOW</a>
+    </div>
+
+    <!-- Right Side: Sign-in Form -->
+    <div class="sign-in-section">
+        <div class="dropdown">
+            <button>LANGUAGES ▼</button>
+            <div class="dropdown-content">
+                <a href="#">ENG</a>
+                <a href="#">FR</a>
+                <a href="#">ARB</a>
+            </div>
+        </div>
+        <h2>SIGN IN</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <button type="button" class="sign-in-btn" onclick="signin()">SIGN IN</button>
+            <div class="additional-links">
+                <a href="#">Forgot your password?</a><br>
+                <a href="#">Didn't receive the verification email?</a>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    const useruser = {
+        fullname : "USER USER",
+        cin : "as12345",
+        phone : "060606060",
+        email : "useruser@gmail.com",
+        password : "12345"
+    }
+
+    function signin() {
+        localStorage.setItem('fullname', useruser.fullname);
+        localStorage.setItem('phone',useruser.phone);
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        if(email === useruser.email && password === useruser.password) {
+            window.location.href = "./userspace.html";
+        } else if(email === "" && password === "")
+        {
+            alert("Invalid email or password. Please try again.");
+        }else {
+            alert("Invalid email or password. Please try again.");
+
+            
+        }
+    }
+</script>
+</html>

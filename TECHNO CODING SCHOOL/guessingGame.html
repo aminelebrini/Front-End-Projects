@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #f5f5f5;
+        height: 100vh;
+        margin: 0;
+        justify-content: center;
+    }
+    .guessingGame {
+        width: 80%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .guessingGame h1 {
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+    .send {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+    input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 10px 0 0 10px;
+        border: none;
+        outline: none;
+        color: #222;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 0 10px 10px 0;
+        border: none;
+        background-color: #0C48C9;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: white;
+        color: #0C48C9;
+        font-weight: bold;
+    }
+    .scorebord {
+        background-color: #333;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .scorebord h1, .scorebord h2 {
+        font-size: 20px;
+        color: #f5f5f5;
+        margin: 0;
+    }
+    .timer {
+        font-size: 22px;
+        color: #f5f5f5;
+        margin-top: 15px;
+    }
+    p {
+        font-size: 22px;
+        margin-top: 10px;
+        align-items: center;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <div class="scorebord">
+        <h1>HELLO: <span id="name"></span></h1>
+        <h1 class="timer" id="timer">Time Remaining: 90min</h1>
+        <h2>Your Level is: <span id="level">0</span></h2>
+    </div>
+    <div class="guessingGame">
+        <h1 id="words">Guess the Word!</h1>
+        <p id="word"></p>
+        
+        <div class="send">
+            <input type="text" placeholder="Type the correct word" id="input" required>
+            <button type="button" onclick="send()">SEND</button>
+        </div>
+    </div>
+</body>
+<script>
+    const playerName = localStorage.getItem('fullname') || "Player";
+    document.getElementById('name').innerText = playerName;
+
+    const words = ["cat", "dog", "sun", "star", "fish", "apple", "tree", "flower", "ocean", "rainbow"];
+    let currentWordIndex = 0;
+    let level = 0;
+    let timeRemaining = 5400; // 90 minutes timer (5400 seconds)
+
+    // Display the first word hint
+    function displayHint() {
+        const word = words[currentWordIndex];
+        document.getElementById('word').innerText = word[0] + "_".repeat(word.length - 2) + word[word.length - 1];
+    }
+    displayHint();
+
+    // Timer functionality
+    function startCountdown() {
+        const timerElement = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            timeRemaining--;
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            timerElement.innerText = `Time Remaining: ${minutes}m ${seconds}s`;
+
+            if (timeRemaining <= 0) {
+                clearInterval(countdown);
+                alert("Time's up! Game over.");
+                window.location.href="./userspace.html"; // Restart game
+            }
+        }, 1000);
+    }
+    startCountdown();
+
+    function send() {
+        const input = document.getElementById('input').value.toLowerCase().trim();
+        const currentWord = words[currentWordIndex];
+
+        if (input === currentWord) {
+            alert("CORRECT!");
+            level++;
+            document.getElementById('level').innerText = level;
+            currentWordIndex++;
+
+            if (currentWordIndex < words.length) {
+                displayHint();
+                document.getElementById('input').value = "";
+            } else {
+                alert("Congratulations! You've guessed all words!");
+                window.location.reload(); // Restart game
+            }
+        } else {
+            alert("Try again!");
+            document.getElementById('input').value = "";
+        }
+    }
+</script>
+
+</html>

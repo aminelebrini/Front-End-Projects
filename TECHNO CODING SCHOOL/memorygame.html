@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY GAME</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #f5f5f5;
+        height: 100vh;
+        margin: 0;
+        justify-content: center;
+    }
+
+    #game {
+        display: grid;
+        grid-template-columns: repeat(2, 120px);
+        grid-gap: 15px;
+        margin-top: 20px;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+        background-color: #333;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+
+    .square.active {
+        background-color: #0C48C9;
+    }
+
+    #start-btn {
+        margin-top: 30px;
+        padding: 12px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        background-color: #0C48C9;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #start-btn:hover {
+        background-color: #0C48C9;
+    }
+
+    .scorebord {
+        background-color: #333;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .scorebord h1, .scorebord h2 {
+        font-size: 20px;
+        color: #f5f5f5;
+        margin: 0;
+    }
+
+    .timer {
+        width: 50%;
+        background-color: #ddd;
+        border-radius: 5px;
+        margin-top: 20px;
+        height: 20px;
+        overflow: hidden;
+    }
+
+    #time-bar {
+        height: 100%;
+        background-color: #0C48C9;
+        width: 100%;
+        transition: width 0.2s linear;
+    }
+
+</style>
+<body>
+    <div class="scorebord">
+        <h1>HELLO: <span id="name"></span></h1>
+        <h2>Your Level is : <span id="level">0</span></h2>
+    </div>
+    
+    <div class="timer">
+        <div id="time-bar"></div>
+    </div>
+    
+    <div id="game">
+        <div class="square" data-index="0"></div>
+        <div class="square" data-index="1"></div>
+        <div class="square" data-index="2"></div>
+        <div class="square" data-index="3"></div>
+    </div>
+    <button id="start-btn">START GAME</button>
+    
+</body>
+<script>
+    const name = localStorage.getItem('fullname') || "Player";
+    document.getElementById('name').innerText = name;
+
+    const squares = document.querySelectorAll(".square");
+    const startBtn = document.getElementById("start-btn");
+    const timeBar = document.getElementById("time-bar");
+
+    let sequence = [];
+    let playerSequence = [];
+    let level = 0;
+    const gameTimeLimit = 10 * 60 * 1000; // 10 دقائق بالمللي ثانية
+    let gameStarted = false;
+    let timeRemaining = gameTimeLimit;
+    let timeInterval;
+
+    startBtn.addEventListener("click", startGame);
+
+    function startGame() {
+        resetGame();
+        gameStarted = true;
+        startGameTimer();
+        nextLevel();
+    }
+
+    function resetGame() {
+        sequence = [];
+        playerSequence = [];
+        level = 0;
+        timeRemaining = gameTimeLimit; 
+        document.getElementById("level").innerText = level;
+        clearInterval(timeInterval);
+        timeBar.style.width = "100%";
+    }
+
+    function startGameTimer() {
+    timeInterval = setInterval(() => {
+        timeRemaining -= 1000; // تقليل الوقت بمقدار 1000 ميلي ثانية
+        const widthPercentage = (timeRemaining / gameTimeLimit) * 100;
+        timeBar.style.width = widthPercentage + "%";
+
+        if (timeRemaining <= 0) {
+            clearInterval(timeInterval);
+            gameStarted = false;
+            alert("Time's up! Game is closed.");
+            localStorage.setItem('level', level);
+            window.location.href = "./userspace.html";
+            const registergame = document.getElementById('registergame');
+            disableGame();
+        }
+    }, 1000);
+}
+    function disableGame() {
+        squares.forEach(square => square.removeEventListener("click", handleSquareClick));
+        startBtn.disabled = true;
+        startBtn.style.backgroundColor = "#777"; // تعطيل الزر
+    }
+
+    function nextLevel() {
+        if (!gameStarted) return;
+        level++;
+        document.getElementById("level").innerText = level;
+        playerSequence = [];
+        sequence.push(Math.floor(Math.random() * squares.length));
+        lightUpSequence();
+    }
+
+    function lightUpSequence() {
+        let delay = 500;
+        sequence.forEach((index, i) => {
+            setTimeout(() => lightUpSquare(index), delay * (i + 1));
+        });
+    }
+
+    function lightUpSquare(index) {
+        squares[index].classList.add("active");
+        setTimeout(() => squares[index].classList.remove("active"), 300);
+    }
+
+    squares.forEach((square, index) => {
+        square.addEventListener("click", () => handlePlayerInput(index));
+    });
+
+    function handlePlayerInput(index) {
+        if (!gameStarted) return;
+        playerSequence.push(index);
+        lightUpSquare(index);
+
+        if (playerSequence[playerSequence.length - 1] !== sequence[playerSequence.length - 1]) {
+            alert("خطأ! حاول مجددًا.");
+            playerSequence = [];
+        } else if (playerSequence.length === sequence.length) {
+            setTimeout(nextLevel, 500);
+        }
+    }
+</script>
+</html>

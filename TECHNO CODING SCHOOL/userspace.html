@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>TECHNO CODING SCHOOL</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Source Code Pro', 'Courier New', Courier, monospace; 
+
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1c1c1c;
+            color: #f0f0f0;
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1000;
+            padding: 10px 2%;
+        }
+        header h1 {
+            color: white;
+            margin-right: auto;
+            font-size: 32px;
+        }
+        footer {
+            position: fixed;
+            box-shadow: 0px 0px 2px 2px black;
+            width: 100%;
+            height: 80px;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .btn a {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            text-decoration: none;
+        }
+        .btn a i {
+            font-size: 20px;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .btn a:active i {
+            color: #0A38A1;
+            transform: scale(0.9);
+        }
+        .display {
+            width: 100%;
+            height: calc(100% - 160px); /* Adjust for header and footer */
+            padding-top: 80px; /* Space for fixed header */
+            overflow-y: auto; /* Allow scrolling if content exceeds the height */
+        }
+        h2 {
+            color: white;
+            font-size: 40px;
+            margin: 20px 0 10px 10%;
+        }
+        h3, h4 {
+            margin: 10px 0 5px 10%;
+            font-size: 25px;
+            color: white;
+        }
+        p {
+            margin: 10px 10%;
+            font-size: 15px;
+            color: gray;
+        }
+        .info {
+            margin: 10px 10%;
+        }
+        .lign1 {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        h5 {
+            margin-top: 0;
+            width: 40%;
+            height: 50px;
+            border-radius: 15px;
+            font-size: 20px;
+            color: gray;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 12px;
+            margin-left: 20px;
+        }
+        input {
+            margin-top: 0;
+            width: 40%;
+            height: 50px;
+            border-radius: 15px;
+            margin-left: 20px;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+        }
+        input::placeholder {
+            font-size: 15px;
+            color: #aaa;
+        }
+        .register {
+            width: 120px;
+            background-color: #0C48C9;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: auto;
+            text-align: center;
+            text-decoration: none;
+        }
+        .register:hover {
+            background-color: #0A38A1;
+        }
+        .games {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10%;
+            gap: 20px;
+            width: 80%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .speedgame, .logicgame {
+            flex: 1;
+            text-align: center;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .speedgame:hover, .logicgame:hover {
+            transform: scale(1.05);
+        }
+        .speedgame h3, .logicgame h3 {
+            text-align: center;
+        }
+        .speedgame button, .logicgame button {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            background-color: #0C48C9;
+            color: white;
+            cursor: pointer;
+            margin-left: 10%;
+            transition: background-color 0.3s;
+        }
+        .speedgame button:hover, .logicgame button:hover {
+            background-color: #0A38A1;
+        }
+        .display{
+            margin-top: -18%;
+        }
+        h2{
+            margin-top: 0%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TECHNO.</h1>
+        <a href="./register.html" class="register">LOG-OUT</a>
+    </header>
+    <div class="display" id="display"></div>
+    <footer>
+        <div class="btn">
+            <a href="#" onclick="showProfile()" id="profile"><i class="fas fa-user" aria-label="Profile"></i></a>
+            <a href="#" onclick="showGamepad()" id="gamepad"><i class="fas fa-gamepad" aria-label="Gamepad"></i></a>
+            <a href="#" onclick="showFlag()" id="flag"><i class="fas fa-flag-checkered" aria-label="Flag"></i></a>
+            <a href="#" onclick="showCheck()" id="check"><i class="fas fa-check" aria-label="Check"></i></a>
+            <a href="#" onclick="showBook()" id="book"><i class="fas fa-book" aria-label="Book"></i></a>
+            <a href="#" onclick="showPool1()" id="pool1"><i class="fas fa-swimming-pool" aria-label="Swimming Pool 1"></i></a>
+            <a href="#" onclick="showPool2()" id="pool2"><i class="fas fa-swimming-pool" aria-label="Swimming Pool 2"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function showProfile() {
+            const display = document.getElementById('display');
+            const phonee = localStorage.getItem('phone');
+            display.innerHTML = `
+                <div>
+                    <h2>Candidate Information</h2>
+                    <h3>TELL US A LITTLE MORE ABOUT YOURSELF</h3>
+                    <p>To complete your registration, please fill out the form below with accurate details. Double-check all information for accuracy before submitting.</p>
+                    <h4>Please fill the information below</h4>
+                    <div class="info">
+                        <div class="lign1">
+                            <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                        </div>
+                        <div class="lign1">
+                            <input type="text" id="Bdate" name="Bdate" placeholder="Birth Date" required>
+                            <input type="text" id="gender" name="gender" placeholder="Gender: Male / Female" required>
+                        </div>
+                        <div class="lign1">
+                            <h5 id="phone">${phonee ? phonee : "Phone number not set"}</h5>
+                            <input type="text" id="Country" name="Country" placeholder="Country" required>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function showGamepad() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Gamepad Section</h2>
+                <h3>LET'S PLAY SOME GAMES</h3>
+                <p>Are you Ready to go down the Rabbit Hole?</p>
+                <div class="games">
+                    <div class="speedgame">
+                        <h3>Memory Game</h3>
+                        <button class="register" onclick="location.href='memorygame.html'" id="registergame">Start Game</button>
+                    </div>
+                    <div class="logicgame">
+                        <h3>Guessing Game</h3>
+                        <button class="register" onclick="location.href='guessingGame.html'" id="guessgame">Start Game</button>
+                    </div>
+                </div>`;
+        }
+
+        function showFlag() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Flag Game Section</h2>
+                <p>This is where the Flag Game would be displayed.</p>`;
+        }
+
+        function showCheck() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Check Game Section</h2>
+                <p>This is where the Check Game would be displayed.</p>`;
+        }
+
+        function showBook() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Book Section</h2>
+                <p>This is where the Book details would be displayed.</p>`;
+        }
+
+        function showPool1() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Pool 1 Game Section</h2>
+                <p>This is where the Pool 1 Game would be displayed.</p>`;
+        }
+
+        function showPool2() {
+            const display = document.getElementById('display');
+            display.innerHTML = `
+                <h2>Pool 2 Game Section</h2>
+                <p>This is where the Pool 2 Game would be displayed.</p>`;
+        }
+    </script>
+</body>
+</html>
