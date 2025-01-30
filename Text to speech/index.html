@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT TO SPEECH</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    h1{
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+    }
+    textarea {
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            resize: none;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer{
+            width: 100%;
+            height: 70px;
+            margin-top: 43px;
+            border-radius: 0px 0px 8px 8px;	
+            background-color: #007bff;
+        }
+        footer p {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+        footer a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+</style>
+<body>
+    <h1>TEXT TO SPEECH</h1>
+    <div class="container">
+    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+    <button onclick="speak()">SPEAK</button>
+</div>
+<footer>
+    <p>2025 | &copy; <a href="https://github.com/aminelebrini">AMINE LEBRINI</a></p>
+</footer>
+</body>
+<script src="index.js"></script>
+</html>
