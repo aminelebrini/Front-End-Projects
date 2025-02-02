@@ -6,15 +6,17 @@
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>BUS TRAJET</title>
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
-    <header class="bg-blue-600 h-16 w-full flex items-center justify-center">
-        <h1 class="text-white text-2xl font-bold">BUS TRAJET</h1>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen w-full">
+    <header class="bg-blue-700 w-full py-4 shadow-lg">
+        <h1 class="text-white text-3xl font-bold text-center tracking-wide">🚌 BUS TRAJET</h1>
     </header>
-    <main class="mt-8 w-full max-w-md p-4 bg-white shadow-lg rounded-xl">
-        <div class="flex flex-col items-center text-center">
-            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048333.png" width="50px" height="50px" alt="bus">
+    <main class="bg-white shadow-lg rounded-xl mt-5 p-8 w-full max-w-5xl flex flex-col md:flex-row items-center gap-8">
+        <div class="flex justify-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048333.png" alt="Bus" class="w-60 h-60 ">
+        </div>
+        <div class="flex flex-col items-left text-center ml-30 w-100">
             <h2 class="text-xl font-semibold mb-4">RESERVE</h2>
-            <div class="w-full flex flex-col border border-blue-600 rounded-xl p-4">
+            <div class="border border-gray-300 rounded-lg p-6 bg-gray-50 shadow-sm">
                 <input type="text" placeholder="FULL NAME" id="fname" required class="border border-blue-600 rounded-xl w-full p-2 mb-2">
                 <input type="text" placeholder="PHONE NUMBER" id="num" required class="border border-blue-600 rounded-xl w-full p-2 mb-2">
                 <select id="dest" required class="border border-blue-600 rounded-xl w-full p-2 mb-2" onclick="price()">
@@ -27,7 +29,7 @@
                     <option>BENI MELLAL</option>
                     <option>NADOR</option>
                 </select>
-                <h2 id="price" class="text-lg font-semibold my-2 border border-blue-600 rounded-xl w-full p-1 mb-2 h-10"></h2>
+                <h2 class="text-lg font-semibold my-2 border border-blue-600 rounded-xl w-full p-1 mb-2 h-10">Price: <span id="price"></span></h2>
                 <input type="date" id="date" required class="border border-blue-600 rounded-xl w-full p-2 mb-2">
                 <input type="time" id="time" required class="border border-blue-600 rounded-xl w-full p-2 mb-2">
             </div>

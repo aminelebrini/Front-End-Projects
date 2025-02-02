@@ -9,8 +9,15 @@ function reserve(){
         alert('Please fill in the required fields');
         return;
     }
+    if(time >= '20:00' || time <= '05:30')
+        {
+            alert('The time is not available, Please choose another time');
+            return;
+        }
     alert('Reservation has been made successfully');
     document.getElementById('msg').innerText = 'Reservation has been made successfully, Please wait for the confirmation call.';
+
+    
 }
 
 function price()
@@ -43,3 +50,4 @@ function price()
             document.getElementById('price').innerText = '250 DH';
         }
 }
+
