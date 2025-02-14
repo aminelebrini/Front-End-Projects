@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>TECHNO Manage</title>
+</head>
+<body>
+    <header class="fixed flex justify-between items-center bg-blue-600 p-1 w-full">
+        <h1 class="text-white font-bold text-3xl ml-5">TECHNO</h1>
+        <h2 id="date" class="text-white font-bold text-3xl ml-5">22</h2>
+        <div class="flex flex-row items-center space-x-4">
+            <h1 id="staffname" class="text-white"></h1>
+            <img src="" id="staffpicture" width="50" height="50" class="rounded-full">
+        </div>
+    </header>
+    <div class="flex flex-row">
+        <nav class="bg-blue-600 flex flex-col mt-13  w-45 h-151 fixed">
+            <ul class="w-full text-white mt-10">
+                <li><a href="#" class="text-bold hover:bg-white hover:text-blue-600 block p-2 hover:scale-105 transition-transform duration-200"onclick="event.preventDefault();resetActive();this.classList.add('bg-white', 'text-blue-600', 'scale-105'); dashboard()">DASHBOARD</a></li>
+                <li><a href="#" class="text-bold hover:bg-white hover:text-blue-600 block p-2 hover:scale-105 transition-transform duration-200"onclick="event.preventDefault();resetActive();this.classList.add('bg-white', 'text-blue-600', 'scale-105');rh()">HUMAN RESOURCES</a></li>
+                <li><a href="./email.html" class="text-bold hover:bg-white hover:text-blue-600 block p-2 hover:scale-105 transition-transform duration-200"onclick="resetActive();this.classList.add('bg-white', 'text-blue-600', 'scale-105')">E-MAILS</a></li>
+                <li><a href="#" class="text-bold hover:bg-white hover:text-blue-600 block p-2 hover:scale-105 transition-transform duration-200"onclick="event.preventDefault();resetActive();this.classList.add('bg-white', 'text-blue-600', 'scale-105')">SETTINGS</a></li>
+            </ul>
+            <a href="index.html" class="text-white flex justify-center items-center text-1xl mt-80 font-bold">Log-out<i class="fas fa-sign-out-alt ml-2"></i></a>
+        </nav>
+        <div class="flex-1 p-6 ml-[200px] mt-10">
+            <div id="display" class="mb-6"></div>
+            <div id="display1" class="w-270 max-w-full ml-3 flex flex-wrap"></div>
+            <div id="display2" class="fixed flex justify-center"></div>
+        </div>
+    </div>
+    </body>
+<script src="./index.js"></script>
+</html>
