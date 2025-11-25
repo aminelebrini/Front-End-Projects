@@ -1,0 +1,159 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bigcontain{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-content: space-around;
+}
+.sid-list{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    height: 60vh;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 4px 8px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sid-list button{
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: black;
+    border-color: transparent;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.sid-person{
+    height: 90%;
+}
+.contain{
+    position: relative;
+    top: 0;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.contain img{
+    width: 100%;
+}
+.rooms{
+    position: absolute;
+    top: 0;
+    display: grid;
+    gap: 0px;
+    padding-left: 5%;
+    grid-template-columns: 25% 37% 30%;
+    grid-template-rows: repeat(5,40%);
+    width: 100%;
+    height: 100%;
+}
+.meeting{
+    grid-column: 3/4;
+    height: 22vh;
+    background-color: rgba(128, 128, 128, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.reception{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    height: 35vh;
+    background-color: rgba(128, 128, 128, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.publicoffice{
+    grid-column: 1/2;
+    grid-row: 1/5;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+.meeting button, .reception button, .publicoffice button{
+    background-color: black;
+    width: 20px;
+    height:20px;
+    border-color: transparent;
+    color: white;
+    font-size: 10px;
+}
+.publicoffice1, .publicoffice2, .publicoffice3, .publicoffice3 , .publicoffice4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formulaire{
+    width: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    border-radius: 25px;
+}
+.formsInput{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cancelbtn{
+    width: 100%;
+}
+.form{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.input input{
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border-color: black;
+}
+.input1{
+    padding: 10px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-start;
+}
+.input1 img{
+    width: 30px;
+    height: 30px;
+    outline-style:dashed;
+    outline-color: rgb(39, 233, 39);
+    border-radius: 50%;
+}
